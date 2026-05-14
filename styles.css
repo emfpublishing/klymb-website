@@ -1774,3 +1774,31 @@ img { max-width: 100%; display: block; }
 .spotlight-tl-label { font-size: 11px; color: var(--text-3); }
 .spotlight-tl-val { font-size: 12px; font-weight: 700; color: var(--text-2); text-align: center; }
 .spotlight-tl-item--peak .spotlight-tl-val { color: var(--accent); }
+
+/* ============================================================
+   PAID ADS STATS GRID
+   ============================================================ */
+.ads-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 24px 0;
+}
+.ads-stat {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.ads-stat-num {
+  font-size: 24px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #7aafd4 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+}
+.ads-stat-label { font-size: 12px; color: var(--text-3); }
