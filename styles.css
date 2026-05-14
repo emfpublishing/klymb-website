@@ -855,10 +855,10 @@ img { max-width: 100%; display: block; }
 .phones-track {
   display: flex;
   gap: 24px;
-  overflow: hidden;
-  scroll-behavior: smooth;
+  overflow: visible;
   width: 100%;
   align-items: center;
+  justify-content: center;
 }
 .phones-track .phone-wrap {
   flex: 0 0 calc(25% - 18px);
