@@ -1682,3 +1682,39 @@ img { max-width: 100%; display: block; }
   z-index: 1002;
   transition: width 0.1s linear;
 }
+
+/* ============================================================
+   ACTIVE NAV LINK
+   ============================================================ */
+.nav-links a.active {
+  color: var(--text);
+}
+.nav-links a.active::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: linear-gradient(to right, #7aafd4, #ec4899);
+  border-radius: 2px;
+  margin-top: 2px;
+}
+
+/* ============================================================
+   PROCESS — connecting lines
+   ============================================================ */
+.process-grid {
+  position: relative;
+}
+.process-grid::before {
+  content: '';
+  position: absolute;
+  top: 32px;
+  left: calc(12.5% + 16px);
+  right: calc(12.5% + 16px);
+  height: 2px;
+  background: linear-gradient(to right, var(--accent), #ec4899);
+  opacity: 0.25;
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .process-grid::before { display: none; }
+}

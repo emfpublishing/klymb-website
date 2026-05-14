@@ -386,3 +386,20 @@ if (progressBar) {
     progressBar.style.width = (scrollTop / docHeight * 100) + '%';
   });
 }
+
+/* ============================================================
+   ACTIVE NAV HIGHLIGHTING ON SCROLL
+   ============================================================ */
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+const observerOptions = { rootMargin: '-40% 0px -55% 0px' };
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+      });
+    }
+  });
+}, observerOptions);
+sections.forEach(s => sectionObserver.observe(s));
