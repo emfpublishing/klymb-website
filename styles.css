@@ -887,3 +887,60 @@ img { max-width: 100%; display: block; }
     transform: none;
   }
 }
+
+/* ============================================================
+   PAID ADS SECTION
+   ============================================================ */
+.paid-ads-section { background: var(--bg); }
+.paid-ads-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.paid-ads-title {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 16px 0 20px;
+}
+.paid-ads-desc {
+  font-size: 16px;
+  color: var(--text-2);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.paid-ads-desc + .btn { margin-top: 8px; }
+.ads-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.ads-stat {
+  background: var(--bg-2);
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ads-stat-number {
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #7aafd4 0%, #a8d4f0 60%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.ads-stat-label {
+  font-size: 13px;
+  color: var(--text-3);
+  line-height: 1.4;
+}
+@media (max-width: 768px) {
+  .paid-ads-inner { grid-template-columns: 1fr; gap: 48px; }
+}
