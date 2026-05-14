@@ -809,7 +809,7 @@ img { max-width: 100%; display: block; }
 }
 .phones-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 32px;
   max-width: 900px;
   margin: 0 auto;
@@ -880,8 +880,8 @@ img { max-width: 100%; display: block; }
 }
 @media (max-width: 768px) {
   .phones-grid {
-    grid-template-columns: 1fr;
-    max-width: 260px;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 560px;
   }
   .phones-grid .phone-wrap:nth-child(2) .phone-mockup {
     transform: none;
