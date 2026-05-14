@@ -363,3 +363,14 @@ if (cookieNotice) {
   if (cookieAccept) cookieAccept.addEventListener('click', dismissCookie);
   if (cookieDismiss) cookieDismiss.addEventListener('click', (e) => { e.preventDefault(); dismissCookie(); });
 }
+
+/* ============================================================
+   CREATOR SECTION ANIMATIONS
+   ============================================================ */
+gsap.from('.creator-left', {
+  scrollTrigger: { trigger: '.creator-section', start: 'top 80%' },
+  x: -40, opacity: 0, duration: 0.8, ease: 'power3.out'
+});
+ScrollTrigger.batch('.creator-stat-card', {
+  onEnter: batch => gsap.from(batch, { y: 30, opacity: 0, duration: 0.6, stagger: 0.1, ease: 'power2.out' }),
+});
