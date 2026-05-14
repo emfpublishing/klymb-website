@@ -229,13 +229,16 @@ function highlight(id) {
 /* ============================================================
    LAZY LOAD VIDEOS — only load when scrolled into view
    ============================================================ */
-const lazyVideos = document.querySelectorAll('video[data-src]');
+const lazyVideos = document.querySelectorAll('video');
 if ('IntersectionObserver' in window) {
   const videoObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const video = entry.target;
-        video.src = video.dataset.src;
+        video.querySelectorAll('source[data-src]').forEach(source => {
+          source.src = source.dataset.src;
+          delete source.dataset.src;
+        });
         video.load();
         video.play().catch(() => {});
         videoObserver.unobserve(video);
@@ -244,8 +247,10 @@ if ('IntersectionObserver' in window) {
   }, { rootMargin: '200px' });
   lazyVideos.forEach(v => videoObserver.observe(v));
 } else {
-  // Fallback for older browsers
-  lazyVideos.forEach(v => { v.src = v.dataset.src; v.load(); });
+  lazyVideos.forEach(v => {
+    v.querySelectorAll('source[data-src]').forEach(s => { s.src = s.dataset.src; });
+    v.load();
+  });
 }
 
 
