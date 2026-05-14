@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Klymb — TikTok Shop Agency</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧗</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black: #0d0d0d;
+      --white: #ffffff;
+      --grey-100: #f5f5f5;
+      --grey-200: #e8e8e8;
+      --grey-400: #999;
+      --grey-600: #555;
+      --accent: #1a1a1a;
+      --green: #22c55e;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--black);
+      background: var(--white);
+    }
+
+    /* SCROLL ANIMATIONS */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-up-delay-1 { transition-delay: 0.1s; }
+    .fade-up-delay-2 { transition-delay: 0.2s; }
+    .fade-up-delay-3 { transition-delay: 0.3s; }
+    .fade-up-delay-4 { transition-delay: 0.4s; }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--grey-200);
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--black);
+      text-decoration: none;
+    }
+    .nav-cta {
+      background: var(--black);
+      color: var(--white);
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.8; }
+
+    /* SECTIONS */
+    section { padding: 80px 24px; }
+    .container { max-width: 760px; margin: 0 auto; }
+    .container-wide { max-width: 960px; margin: 0 auto; }
+
+    /* HERO */
+    .hero {
+      padding-top: 140px;
+      padding-bottom: 100px;
+      background: var(--black);
+      color: var(--white);
+    }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.7);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-size: clamp(40px, 7vw, 72px);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+    .hero h1 span { color: rgba(255,255,255,0.35); }
+    .hero p {
+      font-size: 20px;
+      color: rgba(255,255,255,0.65);
+      max-width: 520px;
+      margin-bottom: 40px;
+      line-height: 1.5;
+    }
+    .hero-cta {
+      display: inline-block;
+      background: var(--white);
+      color: var(--black);
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .hero-cta:hover { opacity: 0.9; }
+    .hero-note {
+      margin-top: 16px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* OFFER STRIP */
+    .offer-strip {
+      background: var(--green);
+      padding: 20px 24px;
+      text-align: center;
+    }
+    .offer-strip p {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    /* STATS STRIP */
+    .stats-strip {
+      background: var(--grey-100);
+      border-bottom: 1px solid var(--grey-200);
+      padding: 40px 24px;
+    }
+    .stats-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      line-height: 1;
+      color: var(--black);
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      font-size: 13px;
+      color: var(--grey-400);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-weight: 600;
+    }
+    @media (max-width: 600px) {
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* WHAT WE DO */
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--grey-400);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      margin-bottom: 48px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--grey-100);
+      border-radius: 12px;
+      padding: 32px;
+    }
+    .service-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .service-card p {
+      font-size: 15px;
+      color: var(--grey-600);
+      line-height: 1.6;
+    }
+
+    /* RESULTS */
+    .results { background: var(--grey-100); }
+    .result-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+    }
+    .result-stat { flex-shrink: 0; }
+    .result-stat .number {
+      font-size: 42px;
+      font-weight: 900;
+      letter-spacing: -2px;
+      line-height: 1;
+      color: var(--black);
+    }
+    .result-stat .label {
+      font-size: 12px;
+      color: var(--grey-400);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+    .result-info h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .result-info p {
+      font-size: 15px;
+      color: var(--grey-600);
+    }
+
+    /* WHO IT'S FOR */
+    .for-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 40px;
+    }
+    .for-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 20px;
+      background: var(--grey-100);
+      border-radius: 10px;
+    }
+    .for-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .for-item p {
+      font-size: 15px;
+      color: var(--grey-600);
+      line-height: 1.5;
+    }
+    @media (max-width: 600px) {
+      .for-grid { grid-template-columns: 1fr; }
+    }
+
+    /* HOW IT WORKS */
+    .steps { counter-reset: step; }
+    .step {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 40px;
+      align-items: flex-start;
+    }
+    .step-number {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      background: var(--black);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+    .step-content h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .step-content p {
+      font-size: 15px;
+      color: var(--grey-600);
+      line-height: 1.6;
+    }
+
+    /* ABOUT */
+    .about { background: var(--black); color: var(--white); }
+    .about-inner {
+      display: flex;
+      gap: 48px;
+      align-items: center;
+    }
+    .about-avatar {
+      flex-shrink: 0;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+    }
+    .about-text .section-label { color: rgba(255,255,255,0.4); }
+    .about-text h2 {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+    .about-text p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      max-width: 520px;
+    }
+    .about-text p + p { margin-top: 12px; }
+    @media (max-width: 600px) {
+      .about-inner { flex-direction: column; gap: 24px; }
+    }
+
+    /* FAQ */
+    .faq { background: var(--grey-100); }
+    .faq-item {
+      background: var(--white);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 22px 28px;
+      text-align: left;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--black);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .faq-question:hover { background: var(--grey-100); }
+    .faq-icon {
+      flex-shrink: 0;
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--grey-400);
+      transition: transform 0.3s ease;
+      line-height: 1;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 28px;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 200px;
+      padding: 0 28px 22px;
+    }
+    .faq-answer p {
+      font-size: 15px;
+      color: var(--grey-600);
+      line-height: 1.6;
+    }
+
+    /* CTA */
+    .cta-section {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      margin-bottom: 16px;
+    }
+    .cta-section p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 40px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--white);
+      color: var(--black);
+      padding: 18px 40px;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .cta-btn:hover { opacity: 0.9; }
+    .cta-note {
+      margin-top: 16px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 32px 24px;
+      border-top: 1px solid var(--grey-200);
+      text-align: center;
+    }
+    footer p {
+      font-size: 13px;
+      color: var(--grey-400);
+    }
+    footer a {
+      color: var(--grey-400);
+      text-decoration: none;
+    }
+    footer a:hover { color: var(--black); }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .result-card { flex-direction: column; gap: 16px; }
+      .result-stat .number { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Klymb</a>
+    <a href="#audit" class="nav-cta">Book a free audit</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-tag fade-up visible">TikTok Shop Agency · UK</div>
+      <h1 class="fade-up visible fade-up-delay-1">We grow<br><span>TikTok Shop</span><br>brands.</h1>
+      <p class="fade-up visible fade-up-delay-2">A results driven TikTok Shop agency focussed on actual conversion and not vanity metrics.</p>
+      <div class="fade-up visible fade-up-delay-3">
+        <a href="#audit" class="hero-cta">Book a free audit →</a>
+        <p class="hero-note">15 minutes. No pitch. Just an honest look at what's possible.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFER STRIP -->
+  <div class="offer-strip">
+    <p>10% of GMV. No retainer. No setup fee. You only pay when we grow your sales.</p>
+  </div>
+
+  <!-- STATS STRIP -->
+  <div class="stats-strip">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-number">25+</div>
+        <div class="stat-label">Brands worked with</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">10k+</div>
+        <div class="stat-label">Creator network</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">250m+</div>
+        <div class="stat-label">Views across TikTok</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">£5m+</div>
+        <div class="stat-label">TikTok GMV generated</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT WE DO -->
+  <section>
+    <div class="container-wide">
+      <p class="section-label fade-up">What we do</p>
+      <h2 class="section-title fade-up">Everything your TikTok Shop needs to grow.</h2>
+      <div class="services-grid">
+        <div class="service-card fade-up">
+          <h3>Affiliate management</h3>
+          <p>We find, brief, and manage creators who sell your product on TikTok. Outreach, onboarding, content guidance, and performance tracking — all handled.</p>
+        </div>
+        <div class="service-card fade-up fade-up-delay-1">
+          <h3>Shop setup & optimisation</h3>
+          <p>Listings, titles, images, commission rates, collections — we make sure your shop is set up to convert before we start driving traffic to it.</p>
+        </div>
+        <div class="service-card fade-up fade-up-delay-2">
+          <h3>Content strategy</h3>
+          <p>We tell you and your affiliates exactly what content works for your product. Hooks, formats, angles — based on what's actually performing in your category right now.</p>
+        </div>
+        <div class="service-card fade-up fade-up-delay-3">
+          <h3>Scaling</h3>
+          <p>Once the basics are working, we scale. More affiliates, paid ads, LIVE shopping, seasonal campaigns. We build the engine, then push it harder.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="results">
+    <div class="container">
+      <p class="section-label fade-up">Results</p>
+      <h2 class="section-title fade-up">What we've done for our clients.</h2>
+
+      <div class="result-card fade-up">
+        <div class="result-stat">
+          <div class="number">£5.1k</div>
+          <div class="label">Month 1 GMV</div>
+        </div>
+        <div class="result-info">
+          <h3>Fuzz Off</h3>
+          <p>Hair removal spray and dermaplaner. £5,140 GMV generated in the first month on TikTok Shop — from zero. Now scaling month-on-month.</p>
+        </div>
+      </div>
+
+      <div class="result-card fade-up">
+        <div class="result-stat">
+          <div class="number">328</div>
+          <div class="label">Units in one week</div>
+        </div>
+        <div class="result-info">
+          <h3>Petibo Pet</h3>
+          <p>Pet hair broom for carpets and floors. Consistent weekly sales driven by affiliate content focused on the before/after transformation.</p>
+        </div>
+      </div>
+
+      <div class="result-card fade-up">
+        <div class="result-stat">
+          <div class="number">3x</div>
+          <div class="label">GMV growth</div>
+        </div>
+        <div class="result-info">
+          <h3>Doughnotts</h3>
+          <p>Nottingham-based donut brand, now selling fresh donuts DTC via TikTok Shop. Tripled GMV in 60 days through affiliate content and LIVE selling.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section>
+    <div class="container">
+      <p class="section-label fade-up">Who it's for</p>
+      <h2 class="section-title fade-up">This works best for brands that...</h2>
+      <div class="for-grid">
+        <div class="for-item fade-up">
+          <span class="for-icon">📦</span>
+          <p>Have a physical product that photographs or films well</p>
+        </div>
+        <div class="for-item fade-up fade-up-delay-1">
+          <span class="for-icon">🛒</span>
+          <p>Are already selling online — Shopify, Amazon, or similar</p>
+        </div>
+        <div class="for-item fade-up fade-up-delay-2">
+          <span class="for-icon">📈</span>
+          <p>Want to add TikTok Shop as a channel without hiring in-house</p>
+        </div>
+        <div class="for-item fade-up fade-up-delay-3">
+          <span class="for-icon">🎁</span>
+          <p>Are ready to send product to creators for content</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section style="background: var(--grey-100);">
+    <div class="container">
+      <p class="section-label fade-up">How it works</p>
+      <h2 class="section-title fade-up">Simple. Transparent. Performance-based.</h2>
+      <div class="steps">
+        <div class="step fade-up">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Free audit</h3>
+            <p>We look at your product, your current TikTok Shop setup (or lack of one), and tell you honestly what we think is possible. No pitch — just a straight assessment.</p>
+          </div>
+        </div>
+        <div class="step fade-up">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Strategy</h3>
+            <p>If we think we can grow your GMV, we put together a plan. Affiliate targets, content angles, listing improvements, timeline.</p>
+          </div>
+        </div>
+        <div class="step fade-up">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Execute</h3>
+            <p>We get to work. You stay focused on your business. We handle TikTok Shop.</p>
+          </div>
+        </div>
+        <div class="step fade-up">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>You pay 10% of what we generate</h3>
+            <p>Monthly invoice based on GMV. That's it. If we don't grow your sales, we don't get paid.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-avatar fade-up">👋</div>
+        <div class="about-text fade-up fade-up-delay-1">
+          <p class="section-label">Who's behind Klymb</p>
+          <h2>Built by someone who does this for their own brand.</h2>
+          <p>I'm Morgan Fearon — Co-Founder of EMF Publishing and the person running Klymb. I've grown my own brand to consistent monthly revenue on TikTok Shop, and I now do the same for a small number of clients.</p>
+          <p>I'm not an agency with a team of account managers. You work directly with me. That means faster decisions, honest feedback, and someone who actually cares whether your numbers go up.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <p class="section-label fade-up">FAQ</p>
+      <h2 class="section-title fade-up">Common questions.</h2>
+
+      <div class="faq-item fade-up">
+        <button class="faq-question" aria-expanded="false">
+          Do I need to already be on TikTok Shop?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>No. We can set up your shop from scratch.</p>
+        </div>
+      </div>
+
+      <div class="faq-item fade-up">
+        <button class="faq-question" aria-expanded="false">
+          What kind of products work best?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Visual products with a clear before/after or transformation — beauty, home, pet, food, lifestyle. Books and gifting products also work well with the right content angle.</p>
+        </div>
+      </div>
+
+      <div class="faq-item fade-up">
+        <button class="faq-question" aria-expanded="false">
+          How long before I see results?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Most brands see their first affiliate sales within 2–4 weeks. Meaningful GMV growth typically takes 60–90 days as the affiliate base builds.</p>
+        </div>
+      </div>
+
+      <div class="faq-item fade-up">
+        <button class="faq-question" aria-expanded="false">
+          What's the minimum commitment?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Three months. TikTok Shop takes time to build momentum — one month isn't enough to see what's possible.</p>
+        </div>
+      </div>
+
+      <div class="faq-item fade-up">
+        <button class="faq-question" aria-expanded="false">
+          Do you work with brands outside the UK?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Currently UK-focused. We know the UK TikTok Shop market well and that's where we get the best results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="audit">
+    <div class="container">
+      <h2 class="fade-up">Ready to grow on TikTok Shop?</h2>
+      <p class="fade-up">15 minutes. No pitch. Just an honest look at whether TikTok Shop is right for your brand.</p>
+      <div class="fade-up">
+        <a href="mailto:morgan@klymb.co.uk" class="cta-btn">Book a free audit →</a>
+        <p class="cta-note">Or DM us on TikTok / Instagram: @klymb</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      Klymb — TikTok Shop Agency · Loughborough, UK ·
+      <a href="mailto:morgan@klymb.co.uk">morgan@klymb.co.uk</a>
+    </p>
+  </footer>
+
+  <script>
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up:not(.visible)').forEach(el => observer.observe(el));
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+
+        // Close all
+        document.querySelectorAll('.faq-item.open').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        // Open clicked (if it wasn't already open)
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
