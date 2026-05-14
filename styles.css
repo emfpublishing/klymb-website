@@ -45,7 +45,7 @@ img { max-width: 100%; display: block; }
    TYPOGRAPHY UTILITIES
    ============================================================ */
 .gradient-text {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 60%, #ec4899 100%);
+  background: linear-gradient(135deg, #7aafd4 0%, #a8d4f0 40%, #ec4899 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
