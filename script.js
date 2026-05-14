@@ -308,3 +308,15 @@ if (scrollTopBtn) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
+
+/* ============================================================
+   ABOUT SECTION ANIMATIONS
+   ============================================================ */
+gsap.from('.about-left', {
+  scrollTrigger: { trigger: '.about-section', start: 'top 80%' },
+  x: -40, opacity: 0, duration: 0.8, ease: 'power3.out'
+});
+gsap.from('.about-card', {
+  scrollTrigger: { trigger: '.about-section', start: 'top 80%' },
+  x: 40, opacity: 0, duration: 0.8, ease: 'power3.out'
+});
