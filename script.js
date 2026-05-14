@@ -320,3 +320,37 @@ gsap.from('.about-card', {
   scrollTrigger: { trigger: '.about-section', start: 'top 80%' },
   x: 40, opacity: 0, duration: 0.8, ease: 'power3.out'
 });
+
+/* ============================================================
+   CONTACT FORM — Formspree AJAX submission
+   ============================================================ */
+const contactForm = document.getElementById('contactForm');
+const formSuccess = document.getElementById('formSuccess');
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = contactForm.querySelector('.form-submit');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    try {
+      const res = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        contactForm.reset();
+        contactForm.style.display = 'none';
+        formSuccess.style.display = 'block';
+      } else {
+        btn.textContent = 'Book a Free Audit →';
+        btn.disabled = false;
+        alert('Something went wrong. Please email morgan@klymb.co.uk directly.');
+      }
+    } catch {
+      btn.textContent = 'Book a Free Audit →';
+      btn.disabled = false;
+      alert('Something went wrong. Please email morgan@klymb.co.uk directly.');
+    }
+  });
+}

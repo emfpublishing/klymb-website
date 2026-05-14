@@ -517,10 +517,41 @@
         <span class="section-tag">Get Started</span>
         <h2 class="cta-title">Ready to grow your<br />TikTok Shop?</h2>
         <p class="cta-sub">Book a free 15-minute audit. We'll show you exactly what's possible for your brand — no fluff, no obligation.</p>
-        <div class="cta-actions">
-          <a href="mailto:morgan@klymb.co.uk" class="btn btn-primary btn-lg">Book a Free Audit</a>
-          <a href="mailto:morgan@klymb.co.uk" class="btn btn-ghost btn-lg">Get in Touch</a>
-        </div>
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/morgan-klymb" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="brand">Brand / Company</label>
+              <input type="text" id="brand" name="brand" placeholder="Your Brand" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@brand.com" required />
+            </div>
+            <div class="form-group">
+              <label for="revenue">Current Monthly Revenue</label>
+              <select id="revenue" name="revenue">
+                <option value="">Select range</option>
+                <option>£0 — just starting</option>
+                <option>£1k – £10k/month</option>
+                <option>£10k – £50k/month</option>
+                <option>£50k – £100k/month</option>
+                <option>£100k+/month</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Tell us about your brand</label>
+            <textarea id="message" name="message" rows="3" placeholder="What do you sell? Where are you now? What are you trying to achieve?"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg form-submit">Book a Free Audit →</button>
+          <div class="form-success" id="formSuccess">Thanks! We'll be in touch within 24 hours.</div>
+        </form>
         <div class="cta-trust">
           <span>✓ Free 15-min audit</span>
           <span>✓ 10% of GMV only</span>
