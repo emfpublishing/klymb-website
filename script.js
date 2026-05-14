@@ -313,3 +313,16 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     }
   });
 });
+
+/* ============================================================
+   STICKY MOBILE CTA — hide when contact section is visible
+   ============================================================ */
+const stickyCta = document.getElementById('stickyMobileCta');
+const contactSection = document.getElementById('contact');
+if (stickyCta && contactSection) {
+  const obs = new IntersectionObserver(entries => {
+    stickyCta.style.opacity = entries[0].isIntersecting ? '0' : '1';
+    stickyCta.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
+  }, { threshold: 0.1 });
+  obs.observe(contactSection);
+}
