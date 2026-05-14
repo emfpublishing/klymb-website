@@ -327,30 +327,21 @@ gsap.from('.about-card', {
 const contactForm = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
 if (contactForm) {
-  contactForm.addEventListener('submit', async (e) => {
+  contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const btn = contactForm.querySelector('.form-submit');
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-    try {
-      const res = await fetch(contactForm.action, {
-        method: 'POST',
-        body: new FormData(contactForm),
-        headers: { 'Accept': 'application/json' }
-      });
-      if (res.ok) {
-        contactForm.reset();
-        contactForm.style.display = 'none';
-        formSuccess.style.display = 'block';
-      } else {
-        btn.textContent = 'Book a Free Audit →';
-        btn.disabled = false;
-        alert('Something went wrong. Please email morgan@klymb.co.uk directly.');
-      }
-    } catch {
-      btn.textContent = 'Book a Free Audit →';
-      btn.disabled = false;
-      alert('Something went wrong. Please email morgan@klymb.co.uk directly.');
-    }
+    const data = new FormData(contactForm);
+    const name = data.get('name') || '';
+    const brand = data.get('brand') || '';
+    const email = data.get('email') || '';
+    const revenue = data.get('revenue') || '';
+    const message = data.get('message') || '';
+    const body = encodeURIComponent(
+      `Name: ${name}\nBrand: ${brand}\nEmail: ${email}\nRevenue: ${revenue}\n\n${message}`
+    );
+    const subject = encodeURIComponent(`TikTok Shop Audit Request — ${brand}`);
+    window.location.href = `mailto:morgan@klymb.co.uk?subject=${subject}&body=${body}`;
+    contactForm.reset();
+    contactForm.style.display = 'none';
+    if (formSuccess) formSuccess.style.display = 'block';
   });
 }
