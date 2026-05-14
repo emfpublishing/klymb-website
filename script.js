@@ -224,3 +224,26 @@ function highlight(id) {
     gsap.to(a, { color: a.getAttribute('href') === `#${id}` ? '#ffffff' : '', duration: 0.3 });
   });
 }
+
+
+/* ============================================================
+   LAZY LOAD VIDEOS — only load when scrolled into view
+   ============================================================ */
+const lazyVideos = document.querySelectorAll('video[data-src]');
+if ('IntersectionObserver' in window) {
+  const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const video = entry.target;
+        video.src = video.dataset.src;
+        video.load();
+        video.play().catch(() => {});
+        videoObserver.unobserve(video);
+      }
+    });
+  }, { rootMargin: '200px' });
+  lazyVideos.forEach(v => videoObserver.observe(v));
+} else {
+  // Fallback for older browsers
+  lazyVideos.forEach(v => { v.src = v.dataset.src; v.load(); });
+}
