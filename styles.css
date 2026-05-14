@@ -1718,3 +1718,27 @@ img { max-width: 100%; display: block; }
 @media (max-width: 768px) {
   .process-grid::before { display: none; }
 }
+
+/* ============================================================
+   CASE STUDY GROWTH INDICATORS
+   ============================================================ */
+.case-growth-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-top: auto;
+}
+.case-growth-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+.case-growth-label { font-size: 11px; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em; }
+.case-growth-val { font-size: 15px; font-weight: 700; color: var(--text-2); }
+.case-growth-val--up { color: #4ade80; }
+.case-growth-arrow { color: var(--accent); font-size: 18px; flex-shrink: 0; }
