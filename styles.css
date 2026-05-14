@@ -1262,3 +1262,42 @@ img { max-width: 100%; display: block; }
   .problem-grid { grid-template-columns: 1fr; }
   .problem-col, .solution-col { padding: 24px; }
 }
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.testimonial-card {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-color var(--transition), transform var(--transition);
+}
+.testimonial-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+.testimonial-stars { color: #f59e0b; font-size: 16px; letter-spacing: 2px; }
+.testimonial-quote {
+  color: var(--text-2);
+  font-size: 15px;
+  line-height: 1.7;
+  flex: 1;
+  font-style: italic;
+}
+.testimonial-author { margin-top: auto; }
+.testimonial-name { font-weight: 700; font-size: 15px; color: var(--text); }
+.testimonial-role { font-size: 13px; color: var(--text-3); margin-top: 2px; }
+@media (max-width: 768px) {
+  .testimonials-grid { grid-template-columns: 1fr; }
+}
