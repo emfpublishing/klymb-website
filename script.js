@@ -247,3 +247,31 @@ if ('IntersectionObserver' in window) {
   // Fallback for older browsers
   lazyVideos.forEach(v => { v.src = v.dataset.src; v.load(); });
 }
+
+
+/* ============================================================
+   PHONE CAROUSEL
+   ============================================================ */
+const track = document.getElementById('phonesTrack');
+const prevBtn = document.getElementById('carouselPrev');
+const nextBtn = document.getElementById('carouselNext');
+if (track && prevBtn && nextBtn) {
+  function getScrollAmount() {
+    const wrap = track.querySelector('.phone-wrap');
+    return wrap ? wrap.offsetWidth + 24 : 220;
+  }
+  function updateBtns() {
+    prevBtn.disabled = track.scrollLeft <= 0;
+    nextBtn.disabled = track.scrollLeft + track.offsetWidth >= track.scrollWidth - 2;
+  }
+  prevBtn.addEventListener('click', () => {
+    track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+    setTimeout(updateBtns, 400);
+  });
+  nextBtn.addEventListener('click', () => {
+    track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+    setTimeout(updateBtns, 400);
+  });
+  track.addEventListener('scroll', updateBtns);
+  updateBtns();
+}

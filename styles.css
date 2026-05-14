@@ -807,16 +807,56 @@ img { max-width: 100%; display: block; }
   text-align: center;
   margin-bottom: 64px;
 }
-.phones-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
-  max-width: 900px;
+.phones-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 1100px;
   margin: 0 auto;
-  align-items: end;
 }
-.phones-grid .phone-wrap:nth-child(2) .phone-mockup {
-  transform: scale(1.06);
+.phones-track {
+  display: flex;
+  gap: 24px;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  width: 100%;
+  align-items: center;
+}
+.phones-track .phone-wrap {
+  flex: 0 0 calc(25% - 18px);
+  min-width: 180px;
+}
+.carousel-btn {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--text);
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  z-index: 2;
+}
+.carousel-btn:hover {
+  background: rgba(255,255,255,0.15);
+  transform: scale(1.05);
+}
+.carousel-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+@media (max-width: 768px) {
+  .phones-track .phone-wrap { flex: 0 0 calc(50% - 12px); }
+  .carousel-btn { width: 36px; height: 36px; font-size: 16px; }
+}
+@media (max-width: 480px) {
+  .phones-track .phone-wrap { flex: 0 0 80%; }
 }
 .phone-wrap {
   display: flex;
@@ -877,15 +917,6 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-3);
-}
-@media (max-width: 768px) {
-  .phones-grid {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 560px;
-  }
-  .phones-grid .phone-wrap:nth-child(2) .phone-mockup {
-    transform: none;
-  }
 }
 
 /* ============================================================
@@ -1028,14 +1059,6 @@ img { max-width: 100%; display: block; }
   /* Paid ads */
   .paid-ads-inner { grid-template-columns: 1fr; gap: 40px; }
 
-  /* Phone mockups */
-  .phones-grid {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 480px;
-    gap: 16px;
-  }
-  .phones-grid .phone-wrap:nth-child(2) .phone-mockup { transform: none; }
-
   /* Cases */
   .cases-grid { grid-template-columns: 1fr; }
   .case-card--large { grid-row: span 1; }
@@ -1066,12 +1089,6 @@ img { max-width: 100%; display: block; }
   .hero { padding: calc(var(--nav-h) + 32px) 16px 48px; }
   .hero-badge { font-size: 12px; }
   .hero-sub { font-size: 16px; }
-
-  /* Phone mockups — single column on very small screens */
-  .phones-grid {
-    grid-template-columns: 1fr;
-    max-width: 220px;
-  }
 
   /* Nav inner padding */
   .nav-inner { padding: 0 16px; }
