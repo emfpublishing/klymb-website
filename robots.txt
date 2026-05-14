@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://klymb.co.uk/sitemap.xml
