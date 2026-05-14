@@ -403,3 +403,22 @@ const sectionObserver = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 sections.forEach(s => sectionObserver.observe(s));
+
+/* ============================================================
+   HERO ROTATING TEXT
+   ============================================================ */
+const heroRotate = document.getElementById('heroRotate');
+if (heroRotate) {
+  const phrases = ['on TikTok Shop.', 'to £190k/month.', 'with zero retainer.', 'in 90 days.'];
+  let current = 0;
+  setInterval(() => {
+    current = (current + 1) % phrases.length;
+    gsap.to(heroRotate, {
+      opacity: 0, y: -10, duration: 0.3, ease: 'power2.in',
+      onComplete: () => {
+        heroRotate.textContent = phrases[current];
+        gsap.fromTo(heroRotate, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' });
+      }
+    });
+  }, 2800);
+}
