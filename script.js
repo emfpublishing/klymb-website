@@ -326,3 +326,21 @@ if (stickyCta && contactSection) {
   }, { threshold: 0.1 });
   obs.observe(contactSection);
 }
+
+/* ============================================================
+   SCROLL ANIMATIONS — new sections
+   ============================================================ */
+ScrollTrigger.batch('.testimonial-card', {
+  onEnter: batch => gsap.from(batch, { y: 50, opacity: 0, duration: 0.7, stagger: 0.12, ease: 'power3.out' }),
+});
+ScrollTrigger.batch('.faq-item', {
+  onEnter: batch => gsap.from(batch, { y: 30, opacity: 0, duration: 0.5, stagger: 0.08, ease: 'power2.out' }),
+});
+gsap.from('.problem-col', {
+  scrollTrigger: { trigger: '.problem-col', start: 'top 85%' },
+  x: -40, opacity: 0, duration: 0.7, ease: 'power3.out'
+});
+gsap.from('.solution-col', {
+  scrollTrigger: { trigger: '.solution-col', start: 'top 85%' },
+  x: 40, opacity: 0, duration: 0.7, ease: 'power3.out'
+});
