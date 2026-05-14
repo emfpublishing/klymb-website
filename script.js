@@ -374,3 +374,15 @@ gsap.from('.creator-left', {
 ScrollTrigger.batch('.creator-stat-card', {
   onEnter: batch => gsap.from(batch, { y: 30, opacity: 0, duration: 0.6, stagger: 0.1, ease: 'power2.out' }),
 });
+
+/* ============================================================
+   READING PROGRESS BAR
+   ============================================================ */
+const progressBar = document.getElementById('progressBar');
+if (progressBar) {
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.width = (scrollTop / docHeight * 100) + '%';
+  });
+}

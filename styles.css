@@ -1668,3 +1668,17 @@ img { max-width: 100%; display: block; }
   .floating-whatsapp { bottom: 80px; right: 16px; width: 46px; height: 46px; }
   .scroll-top { right: 16px; bottom: 136px; }
 }
+
+/* ============================================================
+   READING PROGRESS BAR
+   ============================================================ */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(to right, #7aafd4, #ec4899);
+  z-index: 1002;
+  transition: width 0.1s linear;
+}
