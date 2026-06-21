@@ -414,7 +414,7 @@ sections.forEach(s => sectionObserver.observe(s));
    ============================================================ */
 const heroRotate = document.getElementById('heroRotate');
 if (heroRotate) {
-  const phrases = ['on TikTok Shop.', 'to £190k/month.', 'with zero retainer.', 'in 90 days.'];
+  const phrases = ['on TikTok Shop.', 'in 90 days.'];
   let current = 0;
   setInterval(() => {
     current = (current + 1) % phrases.length;
