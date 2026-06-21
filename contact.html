@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Tockit | Book a Free TikTok Shop Audit</title>
+  <meta name="description" content="Get in touch with Tockit. We only take on a limited number of new clients each month. Fill out the form to see if you qualify." />
+  <link rel="canonical" href="https://tockit.co.uk/contact" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    .contact-page {
+      min-height: 100vh;
+      padding-top: calc(var(--nav-h) + var(--banner-h) + 60px);
+      padding-bottom: 100px;
+      background: var(--bg);
+    }
+    .contact-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .contact-left .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+      display: block;
+    }
+    .contact-left h1 {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+    .contact-left h1 span { color: var(--accent); }
+    .contact-left .contact-intro {
+      font-size: 16px;
+      color: var(--text-2);
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+    .contact-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .contact-detail-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .contact-detail-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(255,45,85,0.1);
+      border: 1px solid rgba(255,45,85,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--accent);
+    }
+    .contact-detail-text { display: flex; flex-direction: column; }
+    .contact-detail-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-3); font-weight: 600; }
+    .contact-detail-value { font-size: 15px; color: var(--text); font-weight: 500; }
+    .contact-detail-value a { color: var(--text); transition: color 0.2s; }
+    .contact-detail-value a:hover { color: var(--accent); }
+    .spots-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,45,85,0.1);
+      border: 1px solid rgba(255,45,85,0.25);
+      border-radius: 100px;
+      padding: 8px 16px;
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .spots-badge .dot {
+      width: 7px; height: 7px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+    .contact-form-card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 44px;
+    }
+    .contact-form-card h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+    .contact-form-card .form-sub {
+      font-size: 14px;
+      color: var(--text-2);
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+    .cform-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .cform-grid .full { grid-column: 1 / -1; }
+    .cform-group { display: flex; flex-direction: column; gap: 6px; }
+    .cform-group label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-3);
+    }
+    .cform-group input,
+    .cform-group select,
+    .cform-group textarea {
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 14px;
+      padding: 12px 14px;
+      transition: border-color 0.2s;
+      outline: none;
+      width: 100%;
+    }
+    .cform-group input::placeholder,
+    .cform-group textarea::placeholder { color: var(--text-3); }
+    .cform-group select option { background: var(--bg-3); }
+    .cform-group input:focus,
+    .cform-group select:focus,
+    .cform-group textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(255,45,85,0.1);
+    }
+    .cform-group textarea { resize: vertical; min-height: 100px; }
+    .cform-submit {
+      width: 100%;
+      margin-top: 8px;
+      padding: 15px;
+      font-size: 15px;
+    }
+    .cform-success {
+      display: none;
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.3);
+      border-radius: var(--radius-sm);
+      color: #4ade80;
+      padding: 14px 18px;
+      font-size: 14px;
+      margin-top: 16px;
+      text-align: center;
+    }
+    @media (max-width: 900px) {
+      .contact-wrap { grid-template-columns: 1fr; gap: 48px; }
+      .contact-form-card { padding: 28px; }
+      .cform-grid { grid-template-columns: 1fr; }
+      .cform-grid .full { grid-column: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- NAV -->
+  <div class="urgency-banner">
+    <span>Now accepting new clients. <strong>Limited spots available.</strong></span>
+    <a href="mailto:morgan@tockit.co.uk" class="urgency-cta">Get in touch &rarr;</a>
+  </div>
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="logo.png" alt="Tockit" class="nav-logo-img" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#results">Results</a></li>
+        <li><a href="/#faq">FAQ</a></li>
+        <li><a href="/contact.html" class="active">Contact</a></li>
+      </ul>
+      <a href="/contact.html" class="btn btn-primary nav-cta">Book a Free Audit</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="mobileMenu">
+      <a href="/#services">Services</a>
+      <a href="/#results">Results</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/contact.html" class="btn btn-primary">Book a Free Audit</a>
+    </div>
+  </nav>
+
+  <!-- CONTACT PAGE -->
+  <main class="contact-page">
+    <div class="contact-wrap">
+
+      <!-- LEFT: INFO -->
+      <div class="contact-left">
+        <span class="eyebrow">Get in touch</span>
+        <h1>Fill out the form to see if you <span>qualify.</span></h1>
+        <p class="contact-intro">We only take on a limited number of new clients each month. Fill in the form and we'll get back to you within 24 hours with an honest answer on whether we think we can help.</p>
+
+        <div class="spots-badge">
+          <span class="dot"></span>
+          Limited spots available this month
+        </div>
+
+        <div class="contact-detail" style="margin-top: 36px;">
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <span class="contact-detail-label">Email us</span>
+              <span class="contact-detail-value"><a href="mailto:morgan@tockit.co.uk">morgan@tockit.co.uk</a></span>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.4 2 2 0 0 1 3.55 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 6 6l1.56-1.56a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 15z"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <span class="contact-detail-label">Response time</span>
+              <span class="contact-detail-value">Within 24 hours</span>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <span class="contact-detail-label">TikTok</span>
+              <span class="contact-detail-value"><a href="https://www.tiktok.com/@tockit" target="_blank" rel="noopener">@tockit</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: FORM -->
+      <div class="contact-form-card">
+        <h2>Book your free audit</h2>
+        <p class="form-sub">Tell us about your brand and we'll map out exactly what's possible on TikTok Shop.</p>
+        <form class="cform-grid" id="contactPageForm" action="https://formspree.io/f/xpwzgvqk" method="POST">
+          <div class="cform-group">
+            <label for="cp-first">First Name</label>
+            <input type="text" id="cp-first" name="first_name" placeholder="Jane" required />
+          </div>
+          <div class="cform-group">
+            <label for="cp-last">Last Name</label>
+            <input type="text" id="cp-last" name="last_name" placeholder="Smith" required />
+          </div>
+          <div class="cform-group">
+            <label for="cp-brand">Brand / Company</label>
+            <input type="text" id="cp-brand" name="brand" placeholder="Your Brand" required />
+          </div>
+          <div class="cform-group">
+            <label for="cp-position">Your Role</label>
+            <input type="text" id="cp-position" name="position" placeholder="Founder / Marketing Manager" />
+          </div>
+          <div class="cform-group">
+            <label for="cp-email">Email Address</label>
+            <input type="email" id="cp-email" name="email" placeholder="you@yourbrand.com" required />
+          </div>
+          <div class="cform-group">
+            <label for="cp-phone">Phone Number</label>
+            <input type="tel" id="cp-phone" name="phone" placeholder="+44 7700 000000" />
+          </div>
+          <div class="cform-group">
+            <label for="cp-revenue">Annual Turnover</label>
+            <select id="cp-revenue" name="annual_turnover">
+              <option value="">Select range</option>
+              <option>Under &pound;50k</option>
+              <option>&pound;50k &ndash; &pound;250k</option>
+              <option>&pound;250k &ndash; &pound;1m</option>
+              <option>&pound;1m &ndash; &pound;5m</option>
+              <option>&pound;5m+</option>
+            </select>
+          </div>
+          <div class="cform-group">
+            <label for="cp-tiktok">Already on TikTok Shop?</label>
+            <select id="cp-tiktok" name="on_tiktok_shop">
+              <option value="">Select</option>
+              <option>Yes, active</option>
+              <option>Yes, but not selling much</option>
+              <option>No, starting from scratch</option>
+            </select>
+          </div>
+          <div class="cform-group full">
+            <label for="cp-message">Tell us about your brand</label>
+            <textarea id="cp-message" name="message" placeholder="What do you sell? Where are you now? What are you trying to achieve on TikTok Shop?"></textarea>
+          </div>
+          <div class="full">
+            <button type="submit" class="btn btn-primary cform-submit">Submit &rarr;</button>
+            <div class="cform-success" id="cpFormSuccess">Thanks! We'll be in touch within 24 hours.</div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="logo.png" alt="Tockit" class="footer-logo-img" />
+          <p class="footer-tagline">TikTok Shop growth. No nonsense.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="TikTok">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Services</h4>
+            <a href="/#services">Affiliate Management</a>
+            <a href="/#services">Shop Optimisation</a>
+            <a href="/#services">Content Strategy</a>
+            <a href="/#services">Scaling &amp; Paid Media</a>
+            <a href="/#services">TikTok Live</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="/#process">Process</a>
+            <a href="/#results">Case Studies</a>
+            <a href="/#faq">FAQ</a>
+            <a href="/contact.html">Contact</a>
+            <a href="mailto:morgan@tockit.co.uk">morgan@tockit.co.uk</a>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <a href="mailto:morgan@tockit.co.uk?subject=Privacy%20Policy%20Enquiry">Privacy Policy</a>
+            <a href="mailto:morgan@tockit.co.uk?subject=Terms%20Enquiry">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Tockit. All rights reserved.</p>
+        <p>UK TikTok Shop Growth Agency</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="gsap.min.js"></script>
+  <script src="ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+
+  <script>
+    const cpForm = document.getElementById('contactPageForm');
+    const cpSuccess = document.getElementById('cpFormSuccess');
+    if (cpForm) {
+      cpForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const data = new FormData(cpForm);
+        try {
+          const res = await fetch(cpForm.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+          if (res.ok) {
+            cpForm.style.display = 'none';
+            cpSuccess.style.display = 'block';
+          }
+        } catch(err) { cpForm.submit(); }
+      });
+    }
+  </script>
+
+  <div class="cookie-notice" id="cookieNotice">
+    <p>We use cookies to improve your experience. By continuing to use this site, you agree to our use of cookies.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-primary" id="cookieAccept" style="padding:8px 20px;font-size:13px;">Accept</button>
+      <a href="#" class="cookie-dismiss">Dismiss</a>
+    </div>
+  </div>
+
+  <a href="mailto:morgan@tockit.co.uk" class="floating-email" aria-label="Email us">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    <span>Get in touch</span>
+  </a>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Back to top">&uarr;</button>
+</body>
+</html>
