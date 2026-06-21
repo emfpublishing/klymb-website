@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 48" height="36">
+  <!-- T with pink accent -->
+  <text x="0" y="38" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="800" font-size="42" fill="#ffffff" letter-spacing="-2">T</text>
+  <!-- Pink triangular bottom-left accent on T -->
+  <polygon points="4,38 4,44 14,44" fill="#FF2D55"/>
+  <!-- ockit in white -->
+  <text x="28" y="38" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-weight="800" font-size="42" fill="#ffffff" letter-spacing="-2">ockit</text>
+  <!-- Pink dot over the i (approximate position) -->
+  <circle cx="98" cy="8" r="4" fill="#FF2D55"/>
+</svg>
