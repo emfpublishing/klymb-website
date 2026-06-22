@@ -22,7 +22,7 @@
   --radius-xl:   32px;
 
   --nav-h:       72px;
-  --banner-h:    40px;
+  --banner-h:    0px;
   --transition:  0.2s ease;
 }
 
@@ -136,43 +136,6 @@ img { max-width: 100%; display: block; }
   font-size: 17px;
   color: var(--text-2);
   line-height: 1.7;
-}
-
-/* ============================================================
-   URGENCY BANNER
-   ============================================================ */
-.urgency-banner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1001;
-  background: linear-gradient(135deg, #FF2D55 0%, #ff6b80 100%);
-  color: #fff;
-  text-align: center;
-  padding: 10px 20px;
-  font-size: 14px;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-}
-.urgency-banner strong { font-weight: 700; }
-.urgency-cta {
-  background: rgba(255,255,255,0.2);
-  border: 1px solid rgba(255,255,255,0.4);
-  color: #fff;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 13px;
-  font-weight: 600;
-  white-space: nowrap;
-  transition: background 0.2s;
-}
-.urgency-cta:hover { background: rgba(255,255,255,0.35); }
-@media (max-width: 480px) {
-  .urgency-banner { flex-direction: column; gap: 6px; padding: 8px 16px; font-size: 13px; }
 }
 
 /* ============================================================
