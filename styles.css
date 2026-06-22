@@ -809,7 +809,6 @@ img { max-width: 100%; display: block; }
   .footer-links  { grid-template-columns: 1fr; }
   .phone-wrap { flex: 0 0 75%; }
   .phone-mockup { max-width: 220px; }
-  :root { --banner-h: 60px; }
 }
 
 /* ============================================================
