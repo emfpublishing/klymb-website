@@ -836,10 +836,17 @@ img { max-width: 100%; display: block; }
   .footer-links  { grid-template-columns: repeat(2, 1fr); }
   .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
   .cta-trust     { flex-direction: column; align-items: center; gap: 8px; }
+  .phones-carousel { overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 0 20px; }
+  .phones-carousel::-webkit-scrollbar { display: none; }
+  .phones-track { justify-content: flex-start; overflow: visible; }
+  .phone-wrap { scroll-snap-align: center; flex: 0 0 calc(50% - 12px); }
 }
 @media (max-width: 480px) {
   .hero-actions  { flex-direction: column; align-items: center; }
   .footer-links  { grid-template-columns: 1fr; }
+  .phone-wrap { flex: 0 0 75%; }
+  .phone-mockup { max-width: 220px; }
+  :root { --banner-h: 60px; }
 }
 
 /* ============================================================
@@ -1828,5 +1835,5 @@ img { max-width: 100%; display: block; }
    ============================================================ */
 @media (max-width: 768px) {
   .problem-section { padding: 48px 0; }
-  .action-section { padding: 60px 0; }
+  .action-section { padding: 48px 0; }
 }
