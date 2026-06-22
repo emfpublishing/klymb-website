@@ -164,7 +164,7 @@ img { max-width: 100%; display: block; }
   gap: 24px;
 }
 .nav-logo { display: flex; align-items: center; }
-.nav-logo-img { height: 36px; width: auto; }
+.nav-logo-img { height: 52px; width: auto; }
 .nav-logo-text { font-size: 18px; font-weight: 800; letter-spacing: -0.03em; }
 .nav-links {
   display: flex;
