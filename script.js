@@ -221,7 +221,7 @@ document.querySelectorAll('section[id]').forEach(section => {
 });
 function highlight(id) {
   navLinks.forEach(a => {
-    gsap.to(a, { color: a.getAttribute('href') === `#${id}` ? '#ffffff' : '', duration: 0.3 });
+    a.classList.toggle('active', a.getAttribute('href') === `#${id}`);
   });
 }
 

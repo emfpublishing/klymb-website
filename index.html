@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
@@ -53,25 +53,27 @@
   <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
-      <a href="/" class="nav-logo">
+      <a href="/" class="nav-logo" aria-label="Tockit home">
         <img src="tockit-logo-nav.png" alt="Tockit" class="nav-logo-img" />
       </a>
       <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
         <li><a href="#results">Results</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
       </ul>
       <a href="/contact.html" class="btn btn-primary nav-cta">Book a Free Audit</a>
-      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div class="nav-mobile" id="mobileMenu">
-      <a href="#services">Services</a>
       <a href="#results">Results</a>
-      <a href="#faq">FAQ</a>
-      <a href="/contact.html">Contact</a>
+      <a href="#why">Why Us</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
       <a href="/contact.html" class="btn btn-primary">Book a Free Audit</a>
     </div>
   </nav>
@@ -81,25 +83,37 @@
     <div class="hero-orb hero-orb--1"></div>
     <div class="hero-orb hero-orb--2"></div>
     <div class="hero-orb hero-orb--3"></div>
+
     <div class="hero-badge">
       <span class="badge-dot"></span>
       Now Accepting New Clients
     </div>
+
     <h1 class="hero-headline">
       We scale your brand<br />
       <span class="gradient-text" id="heroRotate">on TikTok Shop.</span>
     </h1>
+
     <p class="hero-sub">
       The agency behind your next best-selling product. Built for sales, not social media vanity.
     </p>
+
+    <div class="hero-trust">
+      <span class="hero-trust-dots">
+        <span></span><span></span><span></span><span></span>
+      </span>
+      <span>Trusted by 25+ brands</span>
+    </div>
+
     <div class="hero-actions">
       <a href="/contact.html" class="btn btn-primary btn-lg">Book a Free Audit</a>
       <a href="#results" class="btn btn-ghost btn-lg">View Our Results</a>
     </div>
-    <div class="hero-stats">
+
+    <div class="hero-stats" id="results">
       <div class="stat">
         <span class="stat-number" data-target="25" data-suffix="+">25+</span>
-        <span class="stat-label">Brands Worked With</span>
+        <span class="stat-label">Brands</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat">
@@ -109,44 +123,93 @@
       <div class="stat-divider"></div>
       <div class="stat">
         <span class="stat-number" data-target="250" data-suffix="m+">250m+</span>
-        <span class="stat-label">Views Across TikTok</span>
+        <span class="stat-label">Views</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat">
         <span class="stat-number" data-target="10" data-prefix="£" data-suffix="m+">£10m+</span>
-        <span class="stat-label">TikTok GMV Generated</span>
+        <span class="stat-label">GMV Generated</span>
       </div>
     </div>
   </section>
 
-  <!-- LOGO MARQUEE -->
-
-
-  <!-- PROBLEM / SOLUTION -->
-  <section class="section problem-section">
+  <!-- WHY US -->
+  <section class="section why-section" id="why">
     <div class="container">
-      <div class="problem-grid">
-        <div class="problem-col">
-          <span class="section-tag problem-tag">The Problem</span>
-          <h3 class="problem-title">Most brands are doing TikTok Shop wrong</h3>
-          <ul class="problem-list">
-            <li>No clear affiliate strategy. Random creators, no results.</li>
-            <li>Content that gets views but doesn't convert to sales</li>
-            <li>Shop setup that kills conversions before they start</li>
-            <li>Spending on creators who post once and disappear. No system, no follow-through.</li>
-            <li>No data. Just vibes and guesswork.</li>
+      <div class="why-grid">
+        <div class="why-left">
+          <span class="section-tag">Why Us</span>
+          <h2 class="why-heading">We only win <em>when you win.</em></h2>
+        </div>
+        <div class="why-right">
+          <p class="why-intro">
+            Most brands are doing TikTok Shop wrong. Random creators, content that gets views but doesn't convert, and a shop setup that kills sales before they start. We do it differently.
+          </p>
+          <ul class="why-list">
+            <li>
+              <div>
+                <div class="why-list-title">Targeted affiliate recruitment</div>
+                <div class="why-list-text">Creators who actually convert. Not random posts. Not vanity reach.</div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <div class="why-list-title">Content built around hooks that sell</div>
+                <div class="why-list-text">Strategy mapped to your product's strongest angles, not a template.</div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <div class="why-list-title">Full shop optimisation first</div>
+                <div class="why-list-text">We fix listings, titles, images and commission rates before sending traffic.</div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <div class="why-list-title">Double down on what converts</div>
+                <div class="why-list-text">We cut what doesn't and scale what does. No guesswork, just data.</div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <div class="why-list-title">Weekly reporting</div>
+                <div class="why-list-text">You always know what's working, what we're testing, and what's next.</div>
+              </div>
+            </li>
           </ul>
         </div>
-        <div class="solution-col">
-          <span class="section-tag solution-tag">The Tockit Way</span>
-          <h3 class="problem-title">We only win when you win</h3>
-          <ul class="solution-list">
-            <li>Targeted affiliate recruitment. Creators who actually convert.</li>
-            <li>Content strategy built around your product's strongest hooks</li>
-            <li>Full shop optimisation before we spend a penny on traffic</li>
-            <li>We double down on what converts and cut what doesn't</li>
-            <li>Weekly reporting. You always know what's working.</li>
-          </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="process-section" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">How It Works</span>
+        <h2 class="section-title">Simple. Transparent.<br />No fluff.</h2>
+        <p class="section-sub">Four clear steps from audit to scale.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <h3>Audit &amp; Strategy</h3>
+          <p>We look at your product and current setup, then build a custom plan covering affiliates, content angles and shop optimisation.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <h3>Shop Optimisation</h3>
+          <p>Listings, titles, images, commission rates and collections all sorted before we spend a penny on traffic.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <h3>Affiliate &amp; Content</h3>
+          <p>We recruit creators who convert, brief them properly, and manage everything from outreach to performance.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <h3>Scale &amp; Report</h3>
+          <p>Once the engine runs, we push harder. More affiliates, paid amplification, LIVE events, and weekly reporting.</p>
         </div>
       </div>
     </div>
@@ -170,7 +233,7 @@
           </div>
           <p class="phone-label">EMF Publishing</p>
         </div>
-<div class="phone-wrap">
+        <div class="phone-wrap">
           <div class="phone-mockup">
             <div class="phone-screen">
               <video autoplay muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;">
@@ -205,98 +268,12 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section class="section" id="services">
+  <!-- WORK / CASE STUDIES -->
+  <section class="section work-section" id="work">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">What We Do</span>
-        <h2 class="section-title">Everything your TikTok Shop needs</h2>
-        <p class="section-sub">Affiliate management, shop setup, content strategy and paid media. All under one roof.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <h3 class="service-title">Affiliate Management</h3>
-          <p class="service-desc">We find creators who actually sell, brief them properly, and manage everything from outreach to performance. You don't have to touch it.</p>
-          <a href="/contact.html" class="service-link">Learn more <span>→</span></a>
-        </div>
-        <div class="service-card service-card--featured">
-          <div class="service-featured-tag">Most Popular</div>
-          <div class="service-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-          </div>
-          <h3 class="service-title">Shop Setup &amp; Optimisation</h3>
-          <p class="service-desc">Your shop needs to convert before we send traffic to it. We fix listings, titles, images, commission rates and collections so nothing falls through the cracks.</p>
-          <a href="/contact.html" class="service-link">Learn more <span>→</span></a>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-          </div>
-          <h3 class="service-title">Content Strategy</h3>
-          <p class="service-desc">We tell you exactly what content works for your product right now. The hooks, the formats, the angles. Based on what's performing in your category, not guesswork.</p>
-          <a href="/contact.html" class="service-link">Learn more <span>→</span></a>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
-          </div>
-          <h3 class="service-title">Scaling &amp; Paid Media</h3>
-          <p class="service-desc">Once the foundations are working, we push harder. More affiliates, Spark Ads, LIVE shopping, seasonal campaigns. We built the engine now we floor it.</p>
-          <a href="/contact.html" class="service-link">Learn more <span>→</span></a>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          </div>
-          <h3 class="service-title">TikTok Live Management</h3>
-          <p class="service-desc">Full live shopping shows built to turn viewers into buyers. Strategy, hosting guidance and setup all sorted.</p>
-          <a href="/contact.html" class="service-link">Learn more <span>→</span></a>
-        </div>
-        <div class="service-card service-card--cta">
-          <h3 class="service-title">Not sure where to start?</h3>
-          <p class="service-desc">Book a free audit. We'll tell you exactly what your brand needs to win on TikTok Shop.</p>
-          <a href="/contact.html" class="btn btn-primary">Book a Free Audit</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  
-
-
-  <!-- PAID ADS -->
-  <section class="section paid-ads-section">
-    <div class="container">
-      <div class="paid-ads-inner">
-        <div class="paid-ads-left">
-          <span class="section-tag">Paid Media</span>
-          <h2 class="paid-ads-title">We help you scale<br />with Paid Ads</h2>
-          <p class="paid-ads-desc">Organic and affiliates get you started. Paid is what takes you to the next level. We run TikTok GMV Max campaigns that turn your best content into a predictable revenue machine.</p>
-          <p class="paid-ads-desc">Every pound is tracked. Every campaign is optimised for one thing: revenue, not reach.</p>
-          <div class="ads-stats-grid">
-            <div class="ads-stat"><span class="ads-stat-num">£329k</span><span class="ads-stat-label">Revenue generated</span></div>
-            <div class="ads-stat"><span class="ads-stat-num">10×</span><span class="ads-stat-label">Average ROI</span></div>
-            <div class="ads-stat"><span class="ads-stat-num">£1.27</span><span class="ads-stat-label">Cost per click</span></div>
-            <div class="ads-stat"><span class="ads-stat-num">25k+</span><span class="ads-stat-label">Orders driven</span></div>
-          </div>
-          <a href="/contact.html" class="btn btn-primary">Talk to us about ads</a>
-        </div>
-        <div class="paid-ads-right">
-          <img src="ads-dashboard.jpg" alt="TikTok Ads Manager dashboard showing £329k revenue at 10x ROI" class="ads-dashboard-img" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CASE STUDIES -->
-  <section class="section" id="results">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Case Studies</span>
-        <h2 class="section-title">Results that speak for themselves</h2>
+        <span class="section-tag">Work</span>
+        <h2 class="section-title">Results that speak<br />for themselves</h2>
         <p class="section-sub">Real brands. Real numbers.</p>
       </div>
       <div class="cases-grid">
@@ -314,7 +291,7 @@
         <div class="case-card">
           <div class="case-tag">Revenue Growth</div>
           <div class="case-brand">Petibo Pet</div>
-          <div class="case-result">£50k/month</div>
+          <div class="case-result">£50k/mo</div>
           <p class="case-desc">Pet hair broom for carpets and floors. Hit £50k GMV in a single month within 3 months. Driven by affiliate content built around the before and after.</p>
           <div class="case-growth-row">
             <div class="case-growth-item"><span class="case-growth-label">Before</span><span class="case-growth-val">£0 GMV</span></div>
@@ -337,82 +314,37 @@
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="section process-section" id="process">
+  <!-- ABOUT / PAID ADS -->
+  <section class="about-section" id="about">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">How It Works</span>
-        <h2 class="section-title">Simple. Transparent. No fluff.</h2>
-        <p class="section-sub">Here's how it works.</p>
-      </div>
-      <div class="process-grid">
-        <div class="process-step">
-          <div class="step-number">01</div>
-          <h3>Free Audit</h3>
-          <p>We look at your product and your current setup and tell you honestly what we think is possible. No pitch, just a straight answer.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">02</div>
-          <h3>Strategy Build</h3>
-          <p>A custom plan covering affiliates, content angles, shop optimisation and scaling. Built around your product, not a template.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">03</div>
-          <h3>Execution</h3>
-          <p>We get to work. Recruiting creators, briefing content, optimising listings, managing everything day to day.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">04</div>
-          <h3>Scale</h3>
-          <p>Once the engine is running, we push harder. More affiliates, paid amplification, LIVE events and seasonal campaigns.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- TESTIMONIALS -->
-  <section class="section testimonials-section" id="testimonials">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Client Stories</span>
-        <h2 class="section-title">What our clients say</h2>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-quote">"Tockit completely transformed our TikTok Shop presence. We went from zero to consistent daily sales within weeks. The affiliate network they built for us is incredible."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-name">Fuzz Off</div>
-            <div class="testimonial-role">Founder</div>
+      <div class="about-inner">
+        <div class="about-left">
+          <span class="section-tag">About</span>
+          <h2 class="about-title">We help you scale<br />with Paid Ads.</h2>
+          <p class="about-desc">Organic and affiliates get you started. Paid is what takes you to the next level. We run TikTok GMV Max campaigns that turn your best content into a predictable revenue machine.</p>
+          <p class="about-desc">Every pound is tracked. Every campaign is optimised for one thing: revenue, not reach.</p>
+          <div class="ads-stats-grid">
+            <div class="ads-stat"><span class="ads-stat-num">£329k</span><span class="ads-stat-label">Revenue generated</span></div>
+            <div class="ads-stat"><span class="ads-stat-num">10×</span><span class="ads-stat-label">Average ROI</span></div>
+            <div class="ads-stat"><span class="ads-stat-num">£1.27</span><span class="ads-stat-label">Cost per click</span></div>
+            <div class="ads-stat"><span class="ads-stat-num">25k+</span><span class="ads-stat-label">Orders driven</span></div>
           </div>
+          <a href="/contact.html" class="btn btn-primary">Talk to us about ads</a>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-quote">"We hit £50k GMV in a single month. Something we never thought possible. Morgan and the team know TikTok Shop inside out. Best decision we made."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-name">Petibo Pet</div>
-            <div class="testimonial-role">Founder</div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-quote">"250 affiliates in 2 weeks. The speed and quality of creator recruitment was unlike anything we'd seen. Tockit delivered from day one."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-name">Doughnotts</div>
-            <div class="testimonial-role">Founder</div>
-          </div>
+        <div class="about-right">
+          <img src="ads-dashboard.jpg" alt="TikTok Ads Manager dashboard showing £329k revenue at 10x ROI" class="ads-dashboard-img" loading="lazy" />
         </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="section" id="faq">
+  <section class="faq-section" id="faq">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Frequently asked questions</h2>
-        <p class="section-sub">Got questions? Here are the ones we get asked most.</p>
+        <span class="section-tag">FAQ</span>
+        <h2 class="section-title">Frequently asked<br />questions</h2>
+        <p class="section-sub">The ones we get asked most.</p>
       </div>
       <div class="faq-list">
         <div class="faq-item">
@@ -439,53 +371,19 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
   <!-- CTA -->
-  <section class="cta-section" id="contact">
+  <section class="cta-section" id="cta">
     <div class="container">
       <div class="cta-inner">
-        <div class="cta-glow"></div>
         <span class="section-tag">Get Started</span>
-        <h2 class="cta-title">Ready to grow your<br />TikTok Shop?</h2>
-        <p class="cta-sub">Book a free 15-minute audit and we'll show you exactly what's possible for your brand. No obligation, no hard sell.</p>
-        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xpwzgvqk" method="POST">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" placeholder="Jane Smith" required />
-            </div>
-            <div class="form-group">
-              <label for="brand">Brand / Company</label>
-              <input type="text" id="brand" name="brand" placeholder="Your Brand" required />
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="you@brand.com" required />
-            </div>
-            <div class="form-group">
-              <label for="revenue">Current Monthly Revenue</label>
-              <select id="revenue" name="revenue">
-                <option value="">Select range</option>
-                <option>£0 - just starting</option>
-                <option>£1k – £10k/month</option>
-                <option>£10k – £50k/month</option>
-                <option>£50k – £100k/month</option>
-                <option>£100k+/month</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="message">Tell us about your brand</label>
-            <textarea id="message" name="message" rows="3" placeholder="What do you sell? Where are you now? What are you trying to achieve?"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-lg form-submit">Book a Free Audit →</button>
-          <div class="form-success" id="formSuccess">Thanks! We'll be in touch within 24 hours.</div>
-        </form>
+        <h2 class="cta-title">Ready to grow on<br />TikTok Shop?</h2>
+        <p class="cta-sub">Book a free audit. We'll tell you exactly what your brand needs to win on TikTok Shop.</p>
+        <div class="cta-actions">
+          <a href="/contact.html" class="btn btn-primary btn-lg">Book a Free Audit</a>
+          <a href="mailto:morgan@tockitagency.co.uk" class="btn btn-ghost btn-lg">morgan@tockitagency.co.uk</a>
+        </div>
         <div class="cta-trust">
-          <span>✓ Free 15-min audit</span>
-          <span>✓ Strategy, affiliates, content and ads fully managed</span>
+          <span><strong>We only take on 3 new clients per month.</strong> Spots are limited.</span>
         </div>
       </div>
     </div>
@@ -507,18 +405,17 @@
         <div class="footer-links">
           <div class="footer-col">
             <h4>Services</h4>
-            <a href="#services">Affiliate Management</a>
-            <a href="#services">Shop Optimisation</a>
-            <a href="#services">Content Strategy</a>
-            <a href="#services">Scaling &amp; Paid Media</a>
-            <a href="#services">TikTok Live</a>
+            <a href="#why">Affiliate Management</a>
+            <a href="#why">Shop Optimisation</a>
+            <a href="#why">Content Strategy</a>
+            <a href="#about">Paid Media</a>
+            <a href="#why">TikTok Live</a>
           </div>
           <div class="footer-col">
             <h4>Company</h4>
-            <a href="#process">Process</a>
-      <a href="#about">About</a>
-            <a href="#results">Case Studies</a>
-            <a href="#testimonials">Testimonials</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#about">About</a>
+            <a href="#work">Case Studies</a>
             <a href="#faq">FAQ</a>
             <a href="/contact.html">Book an Audit</a>
             <a href="mailto:morgan@tockitagency.co.uk">morgan@tockitagency.co.uk</a>
@@ -540,18 +437,19 @@
   <script src="gsap.min.js"></script>
   <script src="ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
+
   <!-- COOKIE NOTICE -->
   <div class="cookie-notice" id="cookieNotice">
     <p>We use cookies to improve your experience. By continuing to use this site, you agree to our use of cookies.</p>
     <div class="cookie-actions">
-      <button class="btn btn-primary" id="cookieAccept" style="padding:8px 20px;font-size:13px;">Accept</button>
+      <button class="btn btn-primary" id="cookieAccept" style="padding:8px 20px;font-size:13px;min-height:36px;">Accept</button>
       <a href="#" class="cookie-dismiss">Dismiss</a>
     </div>
   </div>
 
   <!-- FLOATING EMAIL BUTTON -->
   <a href="mailto:morgan@tockitagency.co.uk" class="floating-email" aria-label="Email us">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
     <span>Get in touch</span>
   </a>
 
