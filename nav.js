@@ -11,7 +11,7 @@
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="/" class="nav-logo" aria-label="Tockit home">
-        <img src="/tockit-logo-nav.png" alt="Tockit" class="nav-logo-img" />
+        <img src="/tockit-logo-wordmark.jpg" alt="Tockit" class="nav-logo-img" />
       </a>
       <ul class="nav-links">
         <li class="nav-dropdown-wrap">
