@@ -1,3 +1,21 @@
+
+/* ============================================================
+   ANNOUNCEMENT BANNER — dismiss
+   ============================================================ */
+const announceBanner = document.getElementById('announceBanner');
+const announceBannerClose = document.getElementById('announceBannerClose');
+if (announceBannerClose && announceBanner) {
+  announceBannerClose.addEventListener('click', () => {
+    announceBanner.classList.add('hidden');
+    document.documentElement.style.setProperty('--banner-h', '0px');
+    sessionStorage.setItem('bannerDismissed', '1');
+  });
+  if (sessionStorage.getItem('bannerDismissed')) {
+    announceBanner.classList.add('hidden');
+    document.documentElement.style.setProperty('--banner-h', '0px');
+  }
+}
+
 gsap.registerPlugin(ScrollTrigger);
 
 /* ============================================================
