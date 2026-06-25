@@ -21,10 +21,10 @@
             </svg>
           </a>
           <ul class="nav-dropdown-menu">
-            <li><a href="${p('#services')}">Affiliate Management</a></li>
-            <li><a href="${p('#services')}">TikTok Content</a></li>
-            <li><a href="${p('#services')}">Shop Optimisation</a></li>
-            <li><a href="${p('#services')}">Paid Media</a></li>
+            <li><a href="/affiliate-management.html">Affiliate Management</a></li>
+            <li><a href="/tiktok-content.html">TikTok Content</a></li>
+            <li><a href="/shop-optimisation.html">Shop Optimisation</a></li>
+            <li><a href="/paid-media.html">Paid Media</a></li>
           </ul>
         </li>
         <li><a href="${p('#why')}">Why Us</a></li>
