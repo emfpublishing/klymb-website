@@ -1,21 +1,3 @@
-
-/* ============================================================
-   ANNOUNCEMENT BANNER — dismiss
-   ============================================================ */
-const announceBanner = document.getElementById('announceBanner');
-const announceBannerClose = document.getElementById('announceBannerClose');
-if (announceBannerClose && announceBanner) {
-  announceBannerClose.addEventListener('click', () => {
-    announceBanner.classList.add('hidden');
-    document.documentElement.style.setProperty('--banner-h', '0px');
-    sessionStorage.setItem('bannerDismissed', '1');
-  });
-  if (sessionStorage.getItem('bannerDismissed')) {
-    announceBanner.classList.add('hidden');
-    document.documentElement.style.setProperty('--banner-h', '0px');
-  }
-}
-
 gsap.registerPlugin(ScrollTrigger);
 
 /* ============================================================
@@ -43,27 +25,7 @@ document.querySelectorAll('.hero-orb').forEach((orb, i) => {
   });
 });
 
-/* ============================================================
-   NAV SCROLL EFFECT
-   ============================================================ */
-ScrollTrigger.create({
-  start: 'top -20',
-  onEnter:     () => document.getElementById('nav').classList.add('scrolled'),
-  onLeaveBack: () => document.getElementById('nav').classList.remove('scrolled'),
-});
 
-/* ============================================================
-   MOBILE MENU
-   ============================================================ */
-const hamburger  = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
-hamburger.addEventListener('click', () => {
-  const isOpen = mobileMenu.classList.toggle('open');
-  if (isOpen) gsap.fromTo(mobileMenu, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.25, ease: 'power2.out' });
-});
-mobileMenu.querySelectorAll('a').forEach(a =>
-  a.addEventListener('click', () => mobileMenu.classList.remove('open'))
-);
 
 /* ============================================================
    SCROLL-TRIGGERED REVEALS
@@ -444,22 +406,5 @@ if (heroRotate) {
       }
     });
   }, 2800);
-}
-
-/* ============================================================
-   SERVICES DROPDOWN — hover + click toggle
-   ============================================================ */
-const dropdownWrap = document.querySelector('.nav-dropdown-wrap');
-if (dropdownWrap) {
-  const toggle = dropdownWrap.querySelector('.nav-dropdown-toggle');
-  toggle.addEventListener('click', (e) => {
-    e.preventDefault();
-    dropdownWrap.classList.toggle('open');
-  });
-  document.addEventListener('click', (e) => {
-    if (!dropdownWrap.contains(e.target)) {
-      dropdownWrap.classList.remove('open');
-    }
-  });
 }
 
