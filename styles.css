@@ -1431,7 +1431,7 @@ img { max-width: 100%; display: block; }
   opacity: 0;
   pointer-events: none;
   position: absolute;
-  top: calc(100% + 4px);
+  top: 100%;
   left: 0;
   background: #fff;
   border: 1px solid var(--border);
@@ -1439,7 +1439,7 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 8px 24px rgba(0,0,0,0.10);
   list-style: none !important;
   min-width: 200px;
-  padding: 8px;
+  padding: 12px 8px 8px;
   z-index: 9999;
   transform: translateY(6px);
   transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
