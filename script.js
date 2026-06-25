@@ -445,3 +445,21 @@ if (heroRotate) {
     });
   }, 2800);
 }
+
+/* ============================================================
+   SERVICES DROPDOWN — hover + click toggle
+   ============================================================ */
+const dropdownWrap = document.querySelector('.nav-dropdown-wrap');
+if (dropdownWrap) {
+  const toggle = dropdownWrap.querySelector('.nav-dropdown-toggle');
+  toggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    dropdownWrap.classList.toggle('open');
+  });
+  document.addEventListener('click', (e) => {
+    if (!dropdownWrap.contains(e.target)) {
+      dropdownWrap.classList.remove('open');
+    }
+  });
+}
+
