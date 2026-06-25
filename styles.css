@@ -261,15 +261,16 @@ img { max-width: 100%; display: block; }
   color: #fff;
   border: none;
   border-radius: 100px;
-  padding: 10px 22px;
-  font-size: 14px;
+  padding: 7px 16px;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   transition: opacity var(--transition), transform var(--transition);
   white-space: nowrap;
-  min-height: 44px;
+  height: 36px;
   display: inline-flex;
   align-items: center;
+  line-height: 1;
 }
 .nav-cta-pill:hover { opacity: 0.88; transform: translateY(-1px); color: #fff; }
 .nav-hamburger {
