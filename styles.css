@@ -635,7 +635,7 @@ img { max-width: 100%; display: block; }
    ============================================================ */
 .action-section {
   padding: 120px 0;
-  background: var(--bg);
+  background: var(--accent);
 }
 .action-title {
   font-family: var(--font-serif);
@@ -644,7 +644,7 @@ img { max-width: 100%; display: block; }
   letter-spacing: -0.02em;
   text-align: center;
   margin-bottom: 64px;
-  color: var(--text);
+  color: #fff;
 }
 .phones-carousel {
   position: relative;
