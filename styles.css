@@ -384,7 +384,6 @@ img { max-width: 100%; display: block; }
   font-weight: 500;
   color: var(--text-2);
   margin-bottom: 32px;
-  backdrop-filter: blur(8px);
   position: relative;
   z-index: 1;
 }
@@ -401,6 +400,7 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-headline {
+  will-change: transform;
   font-family: var(--font-serif);
   font-size: clamp(44px, 8vw, 104px);
   font-weight: 400;
@@ -413,6 +413,7 @@ img { max-width: 100%; display: block; }
   max-width: 1100px;
 }
 .hero-sub {
+  will-change: transform;
   font-size: clamp(17px, 2vw, 21px);
   color: var(--text-2);
   max-width: 560px;
@@ -466,7 +467,6 @@ img { max-width: 100%; display: block; }
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 24px 40px;
-  backdrop-filter: blur(8px);
   position: relative;
   z-index: 1;
   flex-wrap: wrap;
@@ -832,6 +832,7 @@ img { max-width: 100%; display: block; }
   gap: 56px;
   width: max-content;
   animation: brandScroll 28s linear infinite;
+  will-change: transform;
 }
 .brands-track:hover { animation-play-state: paused; }
 @keyframes brandScroll {
@@ -1276,7 +1277,8 @@ img { max-width: 100%; display: block; }
   .stat { padding: 0; }
   .hero-actions { flex-direction: column; align-items: stretch; width: 100%; max-width: 320px; margin-bottom: 48px; }
   .hero-actions .btn { width: 100%; justify-content: center; }
-  .hero-sub { max-width: 100%; }
+  .hero-sub {
+  will-change: transform; max-width: 100%; }
 
   .why-section, .process-section, .action-section, .work-section, .about-section, .faq-section, .featured-case-section { padding: 72px 0; }
   .featured-case-inner { grid-template-columns: 1fr; gap: 40px; }
@@ -1307,7 +1309,8 @@ img { max-width: 100%; display: block; }
 @media (max-width: 480px) {
   .hero { padding: calc(var(--banner-h) + var(--nav-h) + 16px) 16px 48px; }
   .hero-badge { font-size: 12px; }
-  .hero-sub { font-size: 16px; }
+  .hero-sub {
+  will-change: transform; font-size: 16px; }
   .hero-stats { padding: 20px 16px; }
   .nav-inner { padding: 0 16px; }
   .container { padding: 0 20px; }

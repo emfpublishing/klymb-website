@@ -288,7 +288,7 @@ const scrollTopBtn = document.getElementById('scrollTop');
 if (scrollTopBtn) {
   window.addEventListener('scroll', () => {
     scrollTopBtn.classList.toggle('visible', window.scrollY > 600);
-  });
+  }, { passive: true });
   scrollTopBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
@@ -365,11 +365,18 @@ ScrollTrigger.batch('.creator-stat-card', {
    ============================================================ */
 const progressBar = document.getElementById('progressBar');
 if (progressBar) {
+  let rafPending = false;
   window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    progressBar.style.width = (scrollTop / docHeight * 100) + '%';
-  });
+    if (!rafPending) {
+      rafPending = true;
+      requestAnimationFrame(() => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        progressBar.style.width = (scrollTop / docHeight * 100) + '%';
+        rafPending = false;
+      });
+    }
+  }, { passive: true });
 }
 
 /* ============================================================
