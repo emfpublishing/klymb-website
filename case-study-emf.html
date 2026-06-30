@@ -63,6 +63,13 @@
       margin: 0;
     }
 
+    /* STATS BAR */
+    .cs-stats-bar { background: #d71f51; display: flex; overflow-x: auto; }
+    .cs-stat-cell { flex: 1; min-width: 180px; padding: 36px 40px; border-right: 1px solid rgba(255,248,236,0.15); }
+    .cs-stat-cell:last-child { border-right: none; }
+    .cs-stat-cell-val { font-size: clamp(28px,3.5vw,44px); font-weight: 800; color: #fff8ec; letter-spacing: -0.03em; line-height: 1; display: block; margin-bottom: 8px; }
+    .cs-stat-cell-label { font-size: 13px; font-weight: 600; color: rgba(255,248,236,0.9); display: block; margin-bottom: 2px; }
+
     /* BRIEF */
     .cs-brief {
       background: #f5f0eb;
@@ -146,6 +153,26 @@
       </div>
     </div>
   </section>
+
+  <!-- STATS BAR -->
+  <div class="cs-stats-bar">
+    <div class="cs-stat-cell">
+      <span class="cs-stat-cell-val">£15K</span>
+      <span class="cs-stat-cell-label">GMV in one single day</span>
+    </div>
+    <div class="cs-stat-cell">
+      <span class="cs-stat-cell-val">75M</span>
+      <span class="cs-stat-cell-label">Lifetime views generated</span>
+    </div>
+    <div class="cs-stat-cell">
+      <span class="cs-stat-cell-val">£200k</span>
+      <span class="cs-stat-cell-label">Generated in one single month</span>
+    </div>
+    <div class="cs-stat-cell">
+      <span class="cs-stat-cell-val">#1</span>
+      <span class="cs-stat-cell-label">In Book category on TikTok Shop</span>
+    </div>
+  </div>
 
   <!-- THE BRIEF -->
   <section class="cs-brief">
