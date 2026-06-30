@@ -135,6 +135,16 @@
       .cs-hero-text { padding: 40px 24px; }
       .cs-brief { padding: 56px 0 72px; }
     }
+    /* VIDEO CARDS */
+    .cs-videos { background: #1a0510; padding: 80px 0; }
+    .cs-videos-label { font-size: 14px; color: rgba(255,248,236,0.5); margin-bottom: 32px; display: block; }
+    .cs-video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .cs-video-card { border-radius: 16px; overflow: hidden; background: #2d0c1e; border: 1px solid rgba(255,184,178,0.15); }
+    .cs-video-placeholder { aspect-ratio: 9/16; max-height: 480px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: rgba(255,184,178,0.4); font-size: 13px; border-bottom: 1px solid rgba(255,184,178,0.1); }
+    .cs-video-info { padding: 16px 20px; }
+    .cs-video-title { font-size: 14px; font-weight: 700; color: #fff8ec; display: block; margin-bottom: 2px; }
+    .cs-video-sub { font-size: 12px; color: rgba(255,248,236,0.4); }
+    @media(max-width:600px) { .cs-video-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body class="cs-page">
@@ -179,14 +189,44 @@
     <div class="container">
       <div class="cs-brief-inner">
         <span class="cs-brief-label">The brief</span>
-        <p class="cs-brief-headline"><span class="cs-ph">[ Add your brief headline — e.g. "EMF Publishing came to Tockit with a simple goal: hit £100k in a single month on TikTok Shop. We hit £200k in month five." ]</span></p>
+        <p class="cs-brief-headline">EMF Publishing came to Tockit with a simple goal: hit £100k in a single month within a year on TikTok Shop. We hit £200k in five months.</p>
 
         <span class="cs-what-label">What We Did:</span>
         <ul class="cs-tactic-list">
-          <li>🔥 <strong><span class="cs-ph">[ Tactic 1 — e.g. Affiliate-Led Growth Engine: ]</span></strong> <span class="cs-ph">[ Describe the tactic in 2–3 sentences. What did you do, why, and what was the result? ]</span></li>
-          <li>🏆 <strong><span class="cs-ph">[ Tactic 2 — e.g. Shop Optimisation Before Spend: ]</span></strong> <span class="cs-ph">[ Describe the tactic in 2–3 sentences. ]</span></li>
-          <li>📈 <strong><span class="cs-ph">[ Tactic 3 — e.g. GMV Max &amp; Paid Amplification: ]</span></strong> <span class="cs-ph">[ Describe the tactic in 2–3 sentences. ]</span></li>
+          <li><strong>Affiliate Management.</strong> Recruited affiliates. Incentivised them with rewards. Offered retainers to best performing creators. Onboarded 700 affiliates to increase reach and conversion.</li>
+          <li><strong>Live selling.</strong> Organised, moderated and facilitated 5 lives per week. Provided direction for all lives.</li>
+          <li><strong>Creative strategy.</strong> Researched the book niche in depth, analysed competitors, spotted gaps and created a strategy which suited the client&#39;s situation.</li>
         </ul>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO CONTENT -->
+  <section class="cs-videos">
+    <div class="container">
+      <span class="cs-videos-label">The Content</span>
+      <div class="cs-video-grid">
+        <div class="cs-video-card">
+          <div class="cs-video-placeholder">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5,3 19,12 5,21"/></svg>
+            <span>Add video here</span>
+          </div>
+          <div class="cs-video-info">
+            <span class="cs-video-title">Creator Content</span>
+            <span class="cs-video-sub">EMF Publishing</span>
+          </div>
+        </div>
+        <div class="cs-video-card">
+          <div class="cs-video-placeholder">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5,3 19,12 5,21"/></svg>
+            <span>Add video here</span>
+          </div>
+          <div class="cs-video-info">
+            <span class="cs-video-title">Creator Content</span>
+            <span class="cs-video-sub">EMF Publishing</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
