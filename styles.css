@@ -855,7 +855,7 @@ img { max-width: 100%; display: block; }
 .featured-case-section { padding: 120px 0; background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .featured-case-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 .featured-case-text { display: flex; flex-direction: column; gap: 28px; }
-.featured-case-title { font-family: var(--font-serif); font-size: clamp(28px, 3.5vw, 44px); font-weight: 400; color: var(--text); line-height: 1.2; letter-spacing: -0.02em; margin: 0; }
+.featured-case-title { font-family: var(--font-serif); font-size: clamp(28px, 3.5vw, 44px); font-weight: 700; color: var(--text); line-height: 1.2; letter-spacing: -0.02em; margin: 0; }
 .featured-case-title em { font-style: italic; color: var(--accent); }
 .featured-case-sub { font-size: 16px; color: var(--text-2); line-height: 1.7; margin: 0; }
 .featured-case-stats { display: flex; gap: 32px; padding: 24px 0 0; border-top: 1px solid var(--border); }
