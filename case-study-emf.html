@@ -44,6 +44,15 @@
     /* SECTION LABEL */
     .cs-section-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:var(--cs-highlight); margin-bottom:20px; display:block; }
 
+    /* BRIEF SECTION */
+    .cs-brief { padding:80px 0; background:var(--cs-cream); border-bottom:1px solid rgba(26,5,16,0.08); }
+    .cs-brief-inner { max-width:720px; }
+    .cs-brief-headline { font-size:clamp(18px,2.5vw,24px); font-weight:700; color:#1a0510; line-height:1.4; margin:0 0 48px; }
+    .cs-what-label { font-size:13px; font-weight:700; color:rgba(26,5,16,0.5); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:24px; display:block; }
+    .cs-tactic-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:28px; }
+    .cs-tactic-list li { font-size:15px; color:rgba(26,5,16,0.75); line-height:1.7; }
+    .cs-tactic-list li strong { color:#1a0510; font-weight:700; }
+
     /* SPLIT SECTION */
     .cs-split { padding:100px 0; border-bottom:1px solid var(--border); }
     .cs-split-inner { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
@@ -149,18 +158,18 @@
     </div>
   </div>
 
-  <!-- THE CONTENT -->
-  <section class="cs-split cs-split--dark">
+  <!-- THE BRIEF -->
+  <section class="cs-brief">
     <div class="container">
-      <span class="cs-section-label">The Content</span>
-      <div class="cs-split-inner">
-        <div class="cs-split-left">
-          <h2><span class="cs-placeholder">[ Content headline line 1 ]</span><br /><span><span class="cs-placeholder">[ Highlighted line 2 ]</span></span></h2>
-        </div>
-        <div class="cs-split-right">
-          <p><span class="cs-placeholder">[ Describe the content approach — what types of videos worked, hooks used, creator style, UGC strategy etc. ]</span></p>
-          <p><span class="cs-placeholder">[ Add any additional context about the content direction or how it drove sales. ]</span></p>
-        </div>
+      <div class="cs-brief-inner">
+        <span class="cs-section-label">The brief</span>
+        <p class="cs-brief-headline"><span class="cs-placeholder">[ Add your brief headline here — e.g. "EMF Publishing came to Tockit with one goal: reach £100k in a single month on TikTok Shop. We hit £200k in month five." ]</span></p>
+        <span class="cs-what-label">What We Did:</span>
+        <ul class="cs-tactic-list">
+          <li>🔥 <strong><span class="cs-placeholder">[ Tactic 1 name — e.g. Affiliate-Led Growth Engine: ]</span></strong> <span class="cs-placeholder">[ Describe the tactic in 2–3 sentences. What did you do, why, and what was the result? ]</span></li>
+          <li>🏆 <strong><span class="cs-placeholder">[ Tactic 2 name — e.g. Shop Optimisation Before Spend: ]</span></strong> <span class="cs-placeholder">[ Describe the tactic in 2–3 sentences. ]</span></li>
+          <li>📈 <strong><span class="cs-placeholder">[ Tactic 3 name — e.g. GMV Max &amp; Paid Amplification: ]</span></strong> <span class="cs-placeholder">[ Describe the tactic in 2–3 sentences. ]</span></li>
+        </ul>
       </div>
     </div>
   </section>
@@ -187,22 +196,6 @@
       </div>
     </div>
   </div>
-
-  <!-- THE PARTNERSHIP -->
-  <section class="cs-split">
-    <div class="container">
-      <span class="cs-section-label">The Partnership</span>
-      <div class="cs-split-inner">
-        <div class="cs-split-left">
-          <h2><span class="cs-placeholder">[ Partnership headline ]</span><br /><span><span class="cs-placeholder">[ Highlighted line ]</span></span></h2>
-        </div>
-        <div class="cs-split-right">
-          <p><span class="cs-placeholder">[ Describe the working relationship — how Tockit and EMF worked together, the retainer model, how you were integrated into their brand. ]</span></p>
-          <p><span class="cs-placeholder">[ Any specific campaign moments or milestones worth mentioning — seasonal pushes, key months, turning points. ]</span></p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- OUR STRATEGY -->
   <section class="cs-strategy">
