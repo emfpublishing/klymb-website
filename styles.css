@@ -800,6 +800,20 @@ img { max-width: 100%; display: block; }
 .case-growth-val--up { color: var(--accent); }
 .case-growth-arrow { color: var(--accent); font-size: 18px; flex-shrink: 0; }
 
+/* FEATURED CASE STUDY */
+.featured-case-section { padding: 120px 0; background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.featured-case-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.featured-case-text { display: flex; flex-direction: column; gap: 28px; }
+.featured-case-title { font-family: var(--font-serif); font-size: clamp(28px, 3.5vw, 44px); font-weight: 400; color: var(--text); line-height: 1.2; letter-spacing: -0.02em; margin: 0; }
+.featured-case-title em { font-style: italic; color: var(--accent); }
+.featured-case-sub { font-size: 16px; color: var(--text-2); line-height: 1.7; margin: 0; }
+.featured-case-stats { display: flex; gap: 32px; padding: 24px 0 0; border-top: 1px solid var(--border); }
+.featured-case-stat { display: flex; flex-direction: column; gap: 4px; }
+.featured-case-stat-val { font-size: 28px; font-weight: 800; color: var(--accent); letter-spacing: -0.03em; line-height: 1; }
+.featured-case-stat-label { font-size: 12px; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+.featured-case-media { position: relative; }
+.featured-case-placeholder { aspect-ratio: 4/3; border-radius: var(--radius); border: 2px dashed var(--border-hover); background: var(--bg); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--text-3); font-size: 13px; }
+
 /* ============================================================
    ABOUT — paid ads / founder
    ============================================================ */
@@ -1210,7 +1224,9 @@ img { max-width: 100%; display: block; }
   .hero-actions .btn { width: 100%; justify-content: center; }
   .hero-sub { max-width: 100%; }
 
-  .why-section, .process-section, .action-section, .work-section, .about-section, .faq-section { padding: 72px 0; }
+  .why-section, .process-section, .action-section, .work-section, .about-section, .faq-section, .featured-case-section { padding: 72px 0; }
+  .featured-case-inner { grid-template-columns: 1fr; gap: 40px; }
+  .featured-case-stats { gap: 20px; }
   .cases-grid { grid-template-columns: 1fr; gap: 16px; }
   .case-card--large { grid-row: span 1; }
   .case-card { padding: 28px; }
