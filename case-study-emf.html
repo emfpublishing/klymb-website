@@ -11,256 +11,158 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
-    :root { --cs-dark: #ffb8b2; --cs-dark-2: #ffa09a; --cs-highlight: #d71f51; --cs-pink: #ed769c; --cs-salmon: #ffb8b2; --cs-cream: #fff8ec; --cs-hero-accent: #fff8ec; }
-    body { background: var(--cs-cream); }
-    .cs-split:not(.cs-split--dark) { background: var(--cs-cream); }
-    .cs-strategy { background: var(--cs-cream); }
-    .cs-cta { background: var(--cs-cream); }
-    .cs-strategy-card { background: #fff; border-color: var(--cs-salmon); }
-    .cs-strategy-num { color: var(--cs-highlight); }
-    .section-tag { color: var(--cs-highlight); background: rgba(215,31,81,0.08); border-color: rgba(215,31,81,0.2); }
+    .cs-page { background: #f5f0eb; }
 
-    /* HERO */
+    /* HERO SPLIT */
     .cs-hero {
-      background: var(--cs-dark);
-      padding: calc(var(--nav-h) + var(--banner-h) + 60px) 0 72px;
-      color: #fff;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 80vh;
+      margin-top: calc(var(--nav-h) + var(--banner-h));
     }
-    .cs-back { display:inline-flex; align-items:center; gap:6px; font-size:13px; color:rgba(26,5,16,0.5); text-decoration:none; margin-bottom:28px; }
-    .cs-back:hover { color:#1a0510; }
-    .cs-case-tag { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:rgba(26,5,16,0.55); margin-bottom:16px; display:block; }
-    .cs-hero-brand { font-family:var(--font-serif); font-size:clamp(48px,8vw,100px); font-weight:700; color:#1a0510; line-height:1; letter-spacing:-0.03em; margin:0 0 12px; }
-    .cs-hero-highlight { display:inline-block; background:var(--cs-hero-accent); color:#1a0510; padding:2px 12px; font-family:var(--font-sans); font-size:clamp(14px,2vw,18px); font-weight:800; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:28px; }
-    .cs-hero-desc { font-size:16px; color:rgba(26,5,16,0.65); max-width:560px; line-height:1.7; }
-
-    /* STATS STRIP */
-    .cs-stats-strip { background:var(--cs-hero-accent); padding:0; }
-    .cs-stats-strip-inner { display:flex; overflow-x:auto; }
-    .cs-strip-stat { flex:1; min-width:160px; padding:28px 32px; border-right:1px solid rgba(255,255,255,0.35); text-align:left; }
-    .cs-strip-stat:last-child { border-right:none; }
-    .cs-strip-val { font-family:var(--font-serif); font-size:clamp(24px,3vw,38px); font-weight:700; color:#1a0510; letter-spacing:-0.02em; display:block; line-height:1; }
-    .cs-strip-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:rgba(26,5,16,0.6); margin-top:6px; display:block; }
-
-    /* SECTION LABEL */
-    .cs-section-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:var(--cs-highlight); margin-bottom:20px; display:block; }
-
-    /* BRIEF SECTION */
-    .cs-brief { padding:80px 0; background:var(--cs-cream); border-bottom:1px solid rgba(26,5,16,0.08); }
-    .cs-brief-inner { max-width:720px; }
-    .cs-brief-headline { font-size:clamp(18px,2.5vw,24px); font-weight:700; color:#1a0510; line-height:1.4; margin:0 0 48px; }
-    .cs-what-label { font-size:13px; font-weight:700; color:rgba(26,5,16,0.5); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:24px; display:block; }
-    .cs-tactic-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:28px; }
-    .cs-tactic-list li { font-size:15px; color:rgba(26,5,16,0.75); line-height:1.7; }
-    .cs-tactic-list li strong { color:#1a0510; font-weight:700; }
-
-    /* SPLIT SECTION */
-    .cs-split { padding:100px 0; border-bottom:1px solid var(--border); }
-    .cs-split-inner { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
-    .cs-split-left h2 { font-family:var(--font-serif); font-size:clamp(30px,4vw,52px); font-weight:400; color:var(--text); line-height:1.1; letter-spacing:-0.02em; margin:0 0 16px; }
-    .cs-split-left h2 span { display:inline-block; background:var(--cs-highlight); color:#fff; padding:0 8px; }
-    .cs-split-right p { font-size:15px; color:var(--text-2); line-height:1.8; margin:0 0 16px; }
-    .cs-split-right p:last-child { margin:0; }
-
-    /* DARK SPLIT */
-    .cs-split--dark { background:var(--cs-dark); }
-    .cs-split--dark .cs-section-label { color:rgba(26,5,16,0.5); }
-    .cs-split--dark .cs-split-left h2 { color:#1a0510; }
-    .cs-split--dark .cs-split-right p { color:rgba(26,5,16,0.7); }
-
-    /* MEDIA GRID */
-    .cs-media-wrap { padding:80px 0; background:var(--cs-dark-2); border-bottom:1px solid rgba(26,5,16,0.1); }
-    .cs-media-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-    .cs-media-item { border-radius:12px; overflow:hidden; aspect-ratio:4/3; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); position:relative; }
-    .cs-media-item img { width:100%; height:100%; object-fit:cover; display:block; }
-    .cs-media-placeholder { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; color:rgba(255,255,255,0.3); font-size:13px; border:2px dashed rgba(255,255,255,0.15); border-radius:12px; }
-    .cs-media-caption { margin-top:10px; font-size:12px; color:rgba(255,255,255,0.4); font-weight:600; text-transform:uppercase; letter-spacing:0.08em; }
-
-    /* STRATEGY CARDS */
-    .cs-strategy { padding:100px 0; border-bottom:1px solid var(--border); }
-    .cs-strategy-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:48px; }
-    .cs-strategy-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:32px; }
-    .cs-strategy-num { font-size:11px; font-weight:800; color:var(--cs-highlight); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:16px; display:block; }
-    .cs-strategy-card h3 { font-size:16px; font-weight:700; color:var(--text); margin:0 0 12px; line-height:1.3; }
-    .cs-strategy-card p { font-size:14px; color:var(--text-2); line-height:1.7; margin:0; }
-
-    /* RESULTS */
-    .cs-results { background:var(--cs-dark); padding:100px 0; }
-    .cs-results .cs-section-label { color:rgba(26,5,16,0.5); }
-    .cs-results-headline { font-family:var(--font-serif); font-size:clamp(32px,5vw,64px); font-weight:400; color:#1a0510; line-height:1.1; letter-spacing:-0.02em; margin:0 0 56px; }
-    .cs-results-headline span { display:inline-block; background:var(--cs-highlight); color:#fff; padding:0 10px; }
-    .cs-results-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; }
-    .cs-result-item { border-top:1px solid rgba(26,5,16,0.2); padding-top:28px; }
-    .cs-result-icon { width:36px; height:36px; background:rgba(215,31,81,0.1); border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
-    .cs-result-val { font-family:var(--font-serif); font-size:clamp(28px,3.5vw,48px); font-weight:400; color:#1a0510; letter-spacing:-0.02em; display:block; line-height:1; margin-bottom:6px; }
-    .cs-result-label { font-size:13px; font-weight:700; color:#1a0510; margin-bottom:8px; display:block; }
-    .cs-result-desc { font-size:13px; color:rgba(26,5,16,0.55); line-height:1.6; }
-    .cs-placeholder { background:rgba(232,71,26,0.08); border:1px dashed rgba(232,71,26,0.3); border-radius:4px; padding:2px 8px; color:var(--cs-highlight); font-size:13px; font-style:italic; }
-
-    /* CTA */
-    .cs-cta { padding:100px 0; text-align:center; }
-    .cs-cta h2 { font-family:var(--font-serif); font-size:clamp(32px,4vw,56px); font-weight:400; color:var(--text); letter-spacing:-0.02em; margin:0 0 16px; }
-    .cs-cta p { font-size:16px; color:var(--text-2); margin:0 0 40px; max-width:480px; margin-left:auto; margin-right:auto; line-height:1.7; }
-    .cs-cta-btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
-
-    @media(max-width:900px) {
-      .cs-split-inner { grid-template-columns:1fr; gap:32px; }
-      .cs-strategy-grid { grid-template-columns:1fr; }
-      .cs-results-grid { grid-template-columns:1fr; }
+    .cs-hero-photo {
+      background: #ddd;
+      overflow: hidden;
+      position: relative;
     }
-    @media(max-width:600px) {
-      .cs-media-grid { grid-template-columns:1fr; }
-      .cs-strip-stat { padding:20px 24px; }
+    .cs-hero-photo img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .cs-hero-photo-placeholder {
+      width: 100%; height: 100%;
+      min-height: 480px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 12px;
+      background: #e8e0d8;
+      color: #999;
+      font-size: 14px;
+      border: 2px dashed #ccc;
+    }
+    .cs-hero-text {
+      background: #f5f0eb;
+      display: flex;
+      align-items: center;
+      padding: 80px 72px;
+    }
+    .cs-hero-text-inner { max-width: 480px; }
+    .cs-hero-title {
+      font-family: var(--font-sans);
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 800;
+      color: #111;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin: 0 0 12px;
+    }
+    .cs-hero-sub {
+      font-family: var(--font-sans);
+      font-size: clamp(30px, 4vw, 52px);
+      font-weight: 700;
+      color: #ed769c;
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    /* BRIEF */
+    .cs-brief {
+      background: #f5f0eb;
+      padding: 80px 0 100px;
+    }
+    .cs-brief-inner {
+      max-width: 680px;
+    }
+    .cs-brief-label {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .cs-brief-headline {
+      font-size: clamp(16px, 2vw, 19px);
+      font-weight: 700;
+      color: #111;
+      line-height: 1.5;
+      margin: 0 0 48px;
+    }
+    .cs-what-label {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 24px;
+      display: block;
+    }
+    .cs-tactic-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .cs-tactic-list li {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.7;
+    }
+    .cs-tactic-list li strong {
+      color: #111;
+      font-weight: 700;
+    }
+
+    /* PLACEHOLDER STYLE */
+    .cs-ph {
+      background: rgba(237,118,156,0.08);
+      border: 1px dashed rgba(237,118,156,0.4);
+      border-radius: 4px;
+      padding: 1px 8px;
+      color: #ed769c;
+      font-size: 13px;
+      font-style: italic;
+    }
+
+    @media (max-width: 900px) {
+      .cs-hero { grid-template-columns: 1fr; min-height: auto; }
+      .cs-hero-photo { min-height: 360px; }
+      .cs-hero-text { padding: 56px 32px; }
+    }
+    @media (max-width: 600px) {
+      .cs-hero-text { padding: 40px 24px; }
+      .cs-brief { padding: 56px 0 72px; }
     }
   </style>
 </head>
-<body>
+<body class="cs-page">
   <div id="site-nav"></div>
   <script src="nav.js"></script>
 
   <!-- HERO -->
   <section class="cs-hero">
-    <div class="container">
-      <a href="/#work" class="cs-back">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15,18 9,12 15,6"/></svg>
-        Back to Work
-      </a>
-      <img src="logo-emf-publishing.jpg" alt="EMF Publishing" style="height:64px;width:auto;display:block;margin-bottom:28px;border-radius:4px;" />
-      <span class="cs-case-tag">Case Study — Ongoing Retainer</span>
-      <h1 class="cs-hero-brand">EMF Publishing</h1>
-      <div class="cs-hero-highlight"><span class="cs-placeholder">[ e.g. 50 Creators / Month ]</span></div>
-      <p class="cs-hero-desc">We worked with EMF Publishing on TikTok Shop to scale their viral dating journal, 99 Dates to Remember — building an affiliate-led growth engine that doubled the original target within 5 months.</p>
+    <div class="cs-hero-photo">
+      <div class="cs-hero-photo-placeholder">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+        <span>Add your photo here</span>
+      </div>
+    </div>
+    <div class="cs-hero-text">
+      <div class="cs-hero-text-inner">
+        <h1 class="cs-hero-title">EMF Publishing £200k+ Month</h1>
+        <p class="cs-hero-sub">Case Study.</p>
+      </div>
     </div>
   </section>
-
-  <!-- STATS STRIP -->
-  <div class="cs-stats-strip">
-    <div class="cs-stats-strip-inner">
-      <div class="cs-strip-stat">
-        <span class="cs-strip-val">£200k</span>
-        <span class="cs-strip-label">Peak Monthly GMV</span>
-      </div>
-      <div class="cs-strip-stat">
-        <span class="cs-strip-val">2×</span>
-        <span class="cs-strip-label">Target Exceeded</span>
-      </div>
-      <div class="cs-strip-stat">
-        <span class="cs-strip-val">5 months</span>
-        <span class="cs-strip-label">To Peak Revenue</span>
-      </div>
-      <div class="cs-strip-stat">
-        <span class="cs-strip-val cs-placeholder">[ X ]</span>
-        <span class="cs-strip-label cs-placeholder">[ Stat Label ]</span>
-      </div>
-      <div class="cs-strip-stat">
-        <span class="cs-strip-val cs-placeholder">[ X ]</span>
-        <span class="cs-strip-label cs-placeholder">[ Stat Label ]</span>
-      </div>
-    </div>
-  </div>
 
   <!-- THE BRIEF -->
   <section class="cs-brief">
     <div class="container">
       <div class="cs-brief-inner">
-        <span class="cs-section-label">The brief</span>
-        <p class="cs-brief-headline"><span class="cs-placeholder">[ Add your brief headline here — e.g. "EMF Publishing came to Tockit with one goal: reach £100k in a single month on TikTok Shop. We hit £200k in month five." ]</span></p>
+        <span class="cs-brief-label">The brief</span>
+        <p class="cs-brief-headline"><span class="cs-ph">[ Add your brief headline — e.g. "EMF Publishing came to Tockit with a simple goal: hit £100k in a single month on TikTok Shop. We hit £200k in month five." ]</span></p>
+
         <span class="cs-what-label">What We Did:</span>
         <ul class="cs-tactic-list">
-          <li>🔥 <strong><span class="cs-placeholder">[ Tactic 1 name — e.g. Affiliate-Led Growth Engine: ]</span></strong> <span class="cs-placeholder">[ Describe the tactic in 2–3 sentences. What did you do, why, and what was the result? ]</span></li>
-          <li>🏆 <strong><span class="cs-placeholder">[ Tactic 2 name — e.g. Shop Optimisation Before Spend: ]</span></strong> <span class="cs-placeholder">[ Describe the tactic in 2–3 sentences. ]</span></li>
-          <li>📈 <strong><span class="cs-placeholder">[ Tactic 3 name — e.g. GMV Max &amp; Paid Amplification: ]</span></strong> <span class="cs-placeholder">[ Describe the tactic in 2–3 sentences. ]</span></li>
+          <li>🔥 <strong><span class="cs-ph">[ Tactic 1 — e.g. Affiliate-Led Growth Engine: ]</span></strong> <span class="cs-ph">[ Describe the tactic in 2–3 sentences. What did you do, why, and what was the result? ]</span></li>
+          <li>🏆 <strong><span class="cs-ph">[ Tactic 2 — e.g. Shop Optimisation Before Spend: ]</span></strong> <span class="cs-ph">[ Describe the tactic in 2–3 sentences. ]</span></li>
+          <li>📈 <strong><span class="cs-ph">[ Tactic 3 — e.g. GMV Max &amp; Paid Amplification: ]</span></strong> <span class="cs-ph">[ Describe the tactic in 2–3 sentences. ]</span></li>
         </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- MEDIA GRID -->
-  <div class="cs-media-wrap">
-    <div class="container">
-      <div class="cs-media-grid">
-        <div>
-          <div class="cs-media-item">
-            <img src="screenshot-99dates-tiktok.jpg" alt="99 Dates to Remember TikTok" />
-          </div>
-          <div class="cs-media-caption">TikTok Profile</div>
-        </div>
-        <div>
-          <div class="cs-media-item">
-            <div class="cs-media-placeholder">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
-              <span>Add photo / screenshot here</span>
-            </div>
-          </div>
-          <div class="cs-media-caption cs-placeholder">[ Caption ]</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- OUR STRATEGY -->
-  <section class="cs-strategy">
-    <div class="container">
-      <span class="cs-section-label">Our Strategy</span>
-      <h2 style="font-family:var(--font-serif);font-size:clamp(28px,4vw,48px);font-weight:400;color:var(--text);letter-spacing:-0.02em;margin:0;line-height:1.2;"><span class="cs-placeholder">[ Strategy headline, e.g. "Affiliates, content &amp; shop" ]</span><br /><span style="display:inline-block;background:var(--cs-highlight);color:#fff;padding:0 10px;"><span class="cs-placeholder">[ under one roof. ]</span></span></h2>
-      <div class="cs-strategy-grid">
-        <div class="cs-strategy-card">
-          <span class="cs-strategy-num">01</span>
-          <h3><span class="cs-placeholder">[ Strategy pillar 1 — e.g. Affiliate Recruitment ]</span></h3>
-          <p><span class="cs-placeholder">[ Describe what you did here — how you recruited creators, volume, targeting approach, commission structure etc. ]</span></p>
-        </div>
-        <div class="cs-strategy-card">
-          <span class="cs-strategy-num">02</span>
-          <h3><span class="cs-placeholder">[ Strategy pillar 2 — e.g. Shop Optimisation ]</span></h3>
-          <p><span class="cs-placeholder">[ Describe what you did — product pages, images, commission rates, collections, before you spent on traffic. ]</span></p>
-        </div>
-        <div class="cs-strategy-card">
-          <span class="cs-strategy-num">03</span>
-          <h3><span class="cs-placeholder">[ Strategy pillar 3 — e.g. GMV Max &amp; Paid Media ]</span></h3>
-          <p><span class="cs-placeholder">[ Describe the paid amplification — when you turned on ads, what worked, how you scaled winning creatives. ]</span></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- THE RESULTS -->
-  <section class="cs-results">
-    <div class="container">
-      <span class="cs-section-label">The Results</span>
-      <p class="cs-results-headline"><span class="cs-placeholder">[ Results headline line 1 ]</span><br /><span><span class="cs-placeholder">[ Highlighted punchline. ]</span></span></p>
-      <div class="cs-results-grid">
-        <div class="cs-result-item">
-          <span class="cs-result-val">£200k</span>
-          <span class="cs-result-label">Peak Monthly GMV</span>
-          <p class="cs-result-desc"><span class="cs-placeholder">[ Add context — e.g. "Achieved in month 5, doubling the original target of £100k per month." ]</span></p>
-        </div>
-        <div class="cs-result-item">
-          <span class="cs-result-val"><span class="cs-placeholder" style="font-size:16px;">[ X ]</span></span>
-          <span class="cs-result-label"><span class="cs-placeholder">[ Result label ]</span></span>
-          <p class="cs-result-desc"><span class="cs-placeholder">[ One sentence of context. ]</span></p>
-        </div>
-        <div class="cs-result-item">
-          <span class="cs-result-val"><span class="cs-placeholder" style="font-size:16px;">[ X ]</span></span>
-          <span class="cs-result-label"><span class="cs-placeholder">[ Result label ]</span></span>
-          <p class="cs-result-desc"><span class="cs-placeholder">[ One sentence of context. ]</span></p>
-        </div>
-        <div class="cs-result-item">
-          <span class="cs-result-val"><span class="cs-placeholder" style="font-size:16px;">[ X ]</span></span>
-          <span class="cs-result-label"><span class="cs-placeholder">[ Result label ]</span></span>
-          <p class="cs-result-desc"><span class="cs-placeholder">[ One sentence of context. ]</span></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cs-cta">
-    <div class="container">
-      <span class="section-tag">Get Started</span>
-      <h2>Ready to grow on<br />TikTok Shop?</h2>
-      <p>Book a free audit. We'll tell you exactly what your brand needs to win.</p>
-      <div class="cs-cta-btns">
-        <a href="/contact.html" class="btn btn-primary btn-lg">Book a Free Audit</a>
-        <a href="/#work" class="btn btn-ghost btn-lg">View More Case Studies</a>
       </div>
     </div>
   </section>
