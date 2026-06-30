@@ -863,6 +863,7 @@ img { max-width: 100%; display: block; }
 .featured-case-stat-val { font-size: 28px; font-weight: 800; color: var(--accent); letter-spacing: -0.03em; line-height: 1; }
 .featured-case-stat-label { font-size: 12px; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
 .featured-case-media { position: relative; }
+.featured-case-cta { align-self: start; justify-self: start; }
 .featured-case-placeholder { aspect-ratio: 4/3; border-radius: var(--radius); border: 2px dashed var(--border-hover); background: var(--bg); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--text-3); font-size: 13px; }
 .featured-case-img { width: 100%; border-radius: var(--radius); display: block; box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
 
