@@ -333,7 +333,7 @@ img { max-width: 100%; display: block; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: calc(var(--banner-h) + var(--nav-h) + 60px) 24px 100px;
+  padding: calc(var(--banner-h) + var(--nav-h) + 60px) 24px 48px;
   position: relative;
   overflow: hidden;
   background: var(--bg);
@@ -806,9 +806,9 @@ img { max-width: 100%; display: block; }
 .case-growth-arrow { color: var(--accent); font-size: 18px; flex-shrink: 0; }
 
 .brands-section {
-  padding: 32px 0;
-  border-bottom: 1px solid var(--border);
-  background: var(--bg);
+  padding: 0;
+  margin-top: 40px;
+  width: 100%;
   overflow: hidden;
 }
 .brands-label-wrap { text-align: center; margin-bottom: 20px; }
