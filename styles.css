@@ -834,7 +834,6 @@ img { max-width: 100%; display: block; }
   animation: brandScroll 28s linear infinite;
   will-change: transform;
 }
-.brands-track:hover { animation-play-state: paused; }
 @keyframes brandScroll {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
