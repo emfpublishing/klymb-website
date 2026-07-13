@@ -5,114 +5,184 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Paid Media | Tockit TikTok Shop Agency</title>
-  <meta name="description" content="Tockit's TikTok paid media service. We run GMV Max campaigns that turn your best content into a predictable revenue machine." />
+  <meta name="description" content="Tockit's paid media service for TikTok Shop. We scale winning organic content with Spark Ads and GMV Max to drive predictable revenue." />
+  <link rel="canonical" href="https://tockitagency.co.uk/paid-media" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .service-hero {
-      min-height: 80vh;
+    .sp-hero {
+      min-height: 75vh;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
       padding: calc(var(--banner-h) + var(--nav-h) + 80px) 24px 100px;
       background: var(--bg);
       position: relative;
       overflow: hidden;
     }
-    .service-hero::before {
+    .sp-hero::before {
       content: '';
       position: absolute;
       top: -80px; left: 50%; transform: translateX(-50%);
-      width: 600px; height: 400px;
+      width: 700px; height: 500px;
       background: radial-gradient(circle, rgba(232,71,26,0.07) 0%, transparent 70%);
-      filter: blur(60px);
+      filter: blur(80px);
       pointer-events: none;
     }
-    .service-hero-inner {
+    .sp-hero-inner {
       position: relative;
-      max-width: 720px;
+      max-width: 1100px;
       margin: 0 auto;
-    }
-    .service-hero .section-tag {
-      margin-bottom: 28px;
-    }
-    .service-hero h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(42px, 7vw, 72px);
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-      color: var(--text);
-      margin-bottom: 24px;
-    }
-    .service-hero h1 em {
-      font-style: italic;
-      color: var(--accent);
-    }
-    .service-hero p {
-      font-size: 18px;
-      color: var(--text-2);
-      line-height: 1.7;
-      max-width: 560px;
-      margin: 0 auto 40px;
-    }
-    .placeholder-notice {
-      display: inline-flex;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
       align-items: center;
-      gap: 10px;
-      background: var(--bg-2);
+    }
+    .sp-hero-left h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(40px, 5.5vw, 68px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin: 16px 0 24px;
+    }
+    .sp-hero-left h1 em { font-style: italic; color: var(--accent); }
+    .sp-hero-left p {
+      font-size: 17px;
+      color: var(--text-2);
+      line-height: 1.72;
+      margin-bottom: 36px;
+      max-width: 480px;
+    }
+    .sp-stat-row {
+      display: flex;
+      gap: 40px;
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+    .sp-stat-val { display: block; font-size: 32px; font-weight: 800; color: var(--accent); letter-spacing: -0.03em; line-height: 1; margin-bottom: 4px; }
+    .sp-stat-label { font-size: 12px; font-weight: 600; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em; }
+    .sp-hero-right { display: flex; flex-direction: column; gap: 16px; }
+    .sp-feature-card {
+      background: #fff;
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 20px 28px;
-      margin-top: 16px;
-      font-size: 14px;
-      color: var(--text-3);
+      padding: 28px 32px;
+    }
+    .sp-feature-icon {
+      width: 40px; height: 40px;
+      background: rgba(232,71,26,0.08);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      margin-bottom: 14px;
+    }
+    .sp-feature-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .sp-feature-text { font-size: 14px; color: var(--text-2); line-height: 1.65; }
+    @media (max-width: 900px) {
+      .sp-hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .sp-hero { min-height: auto; }
     }
   </style>
 </head>
 <body>
-
+  <div class="progress-bar" id="progressBar"></div>
   <div id="site-nav"></div>
   <script src="nav.js"></script>
 
-  <section class="service-hero">
-    <div class="service-hero-inner">
-      <span class="section-tag">Paid Media</span>
-      <h1>Turn winners into <em>a revenue machine.</em></h1>
-      <p>We run TikTok GMV Max campaigns that take your best organic content and scale it with paid — predictably and profitably.</p>
-      <div>
-        <a href="/contact.html" class="btn btn-primary btn-lg">Book a Free Audit</a>
-      </div>
-      <div class="placeholder-notice">
-        &#9998;&nbsp; More detail coming soon &mdash; <a href="/contact.html" style="color:var(--accent);font-weight:600;">get in touch in the meantime</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- PAID ADS CONTENT -->
-  <section class="about-section">
-    <div class="container">
-      <div class="about-inner">
-        <div class="about-left">
-          <span class="section-tag">Paid Media</span>
-          <h2 class="about-title">We help you scale<br />with Paid Ads.</h2>
-          <p class="about-desc">Organic and affiliates get you started. Paid is what takes you to the next level. We run TikTok GMV Max campaigns that turn your best content into a predictable revenue machine.</p>
-          <p class="about-desc">Every pound is tracked. Every campaign is optimised for one thing: revenue, not reach.</p>
-          <div class="ads-stats-grid">
-            <div class="ads-stat"><span class="ads-stat-num">£329k</span><span class="ads-stat-label">Revenue generated</span></div>
-            <div class="ads-stat"><span class="ads-stat-num">10&times;</span><span class="ads-stat-label">Average ROI</span></div>
-            <div class="ads-stat"><span class="ads-stat-num">£1.27</span><span class="ads-stat-label">Cost per click</span></div>
-            <div class="ads-stat"><span class="ads-stat-num">25k+</span><span class="ads-stat-label">Orders driven</span></div>
+  <section class="sp-hero">
+    <div class="sp-hero-inner">
+      <div class="sp-hero-left">
+        <span class="section-tag">Paid Media</span>
+        <h1>Scale what works with <em>paid amplification.</em></h1>
+        <p>We never run ads before the foundations are right. Once your shop is optimised and organic content is converting, we use Spark Ads and GMV Max to pour fuel on the fire.</p>
+        <a href="/contact.html" class="btn btn-primary btn-lg">Book a Free Audit &rarr;</a>
+        <div class="sp-stat-row">
+          <div>
+            <span class="sp-stat-val">£200k</span>
+            <span class="sp-stat-label">Peak monthly GMV</span>
           </div>
-          <a href="/contact.html" class="btn btn-primary">Talk to us about ads</a>
+          <div>
+            <span class="sp-stat-val">5mo</span>
+            <span class="sp-stat-label">To hit £200k target</span>
+          </div>
+          <div>
+            <span class="sp-stat-val">10%</span>
+            <span class="sp-stat-label">GMV only, no retainer</span>
+          </div>
         </div>
-        <div class="about-right">
-          <img src="ads-dashboard.jpg" alt="TikTok Ads Manager dashboard showing £329k revenue at 10x ROI" class="ads-dashboard-img" loading="lazy" />
+      </div>
+      <div class="sp-hero-right">
+        <div class="sp-feature-card">
+          <div class="sp-feature-icon">&#9889;</div>
+          <div class="sp-feature-title">Spark Ads</div>
+          <div class="sp-feature-text">We identify your top-performing organic and affiliate content, then amplify it with Spark Ads to reach a wider, targeted audience at scale.</div>
+        </div>
+        <div class="sp-feature-card">
+          <div class="sp-feature-icon">&#128293;</div>
+          <div class="sp-feature-title">GMV Max</div>
+          <div class="sp-feature-text">TikTok's automated campaign type built specifically for Shop conversions. We set it up, feed it the right creative, and let the algorithm find buyers.</div>
+        </div>
+        <div class="sp-feature-card">
+          <div class="sp-feature-icon">&#127891;</div>
+          <div class="sp-feature-title">Creative testing</div>
+          <div class="sp-feature-text">We run structured tests across hooks, angles, and formats to identify the creative combinations that drive the lowest cost per sale.</div>
+        </div>
+        <div class="sp-feature-card">
+          <div class="sp-feature-icon">&#128203;</div>
+          <div class="sp-feature-title">Weekly reporting</div>
+          <div class="sp-feature-text">Clear weekly reports showing spend, GMV, ROAS, and what we are testing next. No jargon, no vanity metrics — just what matters.</div>
         </div>
       </div>
     </div>
   </section>
 
+  <section class="section" style="background: var(--bg-2);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Approach</span>
+        <h2 class="section-title">Paid media done right.</h2>
+        <p class="section-sub">We only run paid media after the organic engine is working. Ads amplify what already converts — they do not rescue a product that is not ready.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <h3>Organic First</h3>
+          <p>Before a single pound is spent on ads, your shop is optimised and organic content is converting. Paid amplifies winners — it does not create them.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <h3>Identify Winners</h3>
+          <p>We analyse your organic and affiliate content to find the videos with the strongest conversion data. These become your paid creatives.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <h3>Launch and Test</h3>
+          <p>Spark Ads and GMV Max campaigns launch with clear objectives, structured testing, and daily monitoring to catch and cut underperformers fast.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <h3>Scale and Report</h3>
+          <p>Winning ad sets get scaled. Budget moves to what is working. You get a clear weekly report showing exactly where every pound is going.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner">
+        <span class="section-tag">Get Started</span>
+        <h2 class="cta-title">Ready to scale with<br />paid media?</h2>
+        <p class="cta-sub">Book a free audit. We will assess whether your brand is ready for paid amplification and show you the path to get there.</p>
+        <div class="cta-actions">
+          <a href="/contact.html" class="btn btn-primary btn-lg">Book a Free Audit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-top">
@@ -129,8 +199,8 @@
           <div class="footer-col">
             <h4>Services</h4>
             <a href="/affiliate-management.html">Affiliate Management</a>
-            <a href="/shop-optimisation.html">Shop Optimisation</a>
             <a href="/tiktok-content.html">TikTok Content</a>
+            <a href="/shop-optimisation.html">Shop Optimisation</a>
             <a href="/paid-media.html">Paid Media</a>
           </div>
           <div class="footer-col">
@@ -154,9 +224,16 @@
       </div>
     </div>
   </footer>
-
+  <div class="cookie-notice" id="cookieNotice">
+    <p>We use cookies to improve your experience. By continuing to use this site, you agree to our use of cookies.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-primary" id="cookieAccept" style="padding:8px 20px;font-size:13px;min-height:36px;">Accept</button>
+      <a href="#" class="cookie-dismiss">Dismiss</a>
+    </div>
+  </div>
+  <button class="scroll-top" id="scrollTop" aria-label="Back to top">&uarr;</button>
   <script src="gsap.min.js"></script>
   <script src="ScrollTrigger.min.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>

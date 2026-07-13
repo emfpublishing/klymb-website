@@ -338,12 +338,12 @@ const cookieNotice = document.getElementById('cookieNotice');
 const cookieAccept = document.getElementById('cookieAccept');
 const cookieDismiss = document.querySelector('.cookie-dismiss');
 if (cookieNotice) {
-  if (localStorage.getItem('klymb_cookies')) {
+  if (localStorage.getItem('tockit_cookies')) {
     cookieNotice.classList.add('hidden');
   }
   function dismissCookie() {
     cookieNotice.classList.add('hidden');
-    localStorage.setItem('klymb_cookies', '1');
+    localStorage.setItem('tockit_cookies', '1');
   }
   if (cookieAccept) cookieAccept.addEventListener('click', dismissCookie);
   if (cookieDismiss) cookieDismiss.addEventListener('click', (e) => { e.preventDefault(); dismissCookie(); });

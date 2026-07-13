@@ -4,91 +4,200 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TikTok Content | Tockit TikTok Shop Agency</title>
-  <meta name="description" content="Tockit's TikTok content strategy service. We create and brief content built around hooks that sell, not just views." />
+  <title>TikTok Content Strategy | Tockit TikTok Shop Agency</title>
+  <meta name="description" content="Content built to convert, not just get views. Tockit develops creative strategy, hooks, and briefs that drive TikTok Shop sales." />
+  <link rel="canonical" href="https://tockitagency.co.uk/tiktok-content" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .service-hero {
-      min-height: 80vh;
+    .sp-hero {
+      min-height: 75vh;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
       padding: calc(var(--banner-h) + var(--nav-h) + 80px) 24px 100px;
       background: var(--bg);
       position: relative;
       overflow: hidden;
     }
-    .service-hero::before {
+    .sp-hero::before {
       content: '';
       position: absolute;
       top: -80px; left: 50%; transform: translateX(-50%);
-      width: 600px; height: 400px;
+      width: 700px; height: 500px;
       background: radial-gradient(circle, rgba(232,71,26,0.07) 0%, transparent 70%);
-      filter: blur(60px);
+      filter: blur(80px);
       pointer-events: none;
     }
-    .service-hero-inner {
+    .sp-hero-inner {
       position: relative;
-      max-width: 720px;
+      max-width: 1100px;
       margin: 0 auto;
-    }
-    .service-hero .section-tag {
-      margin-bottom: 28px;
-    }
-    .service-hero h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(42px, 7vw, 72px);
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-      color: var(--text);
-      margin-bottom: 24px;
-    }
-    .service-hero h1 em {
-      font-style: italic;
-      color: var(--accent);
-    }
-    .service-hero p {
-      font-size: 18px;
-      color: var(--text-2);
-      line-height: 1.7;
-      max-width: 560px;
-      margin: 0 auto 40px;
-    }
-    .placeholder-notice {
-      display: inline-flex;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
       align-items: center;
-      gap: 10px;
-      background: var(--bg-2);
+    }
+    .sp-hero-left h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(40px, 5.5vw, 68px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin: 16px 0 24px;
+    }
+    .sp-hero-left h1 em { font-style: italic; color: var(--accent); }
+    .sp-hero-left p {
+      font-size: 17px;
+      color: var(--text-2);
+      line-height: 1.72;
+      margin-bottom: 36px;
+      max-width: 480px;
+    }
+    .sp-stat-row {
+      display: flex;
+      gap: 40px;
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+    .sp-stat-val { display: block; font-size: 32px; font-weight: 800; color: var(--accent); letter-spacing: -0.03em; line-height: 1; margin-bottom: 4px; }
+    .sp-stat-label { font-size: 12px; font-weight: 600; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em; }
+    .sp-hero-right { display: flex; flex-direction: column; gap: 16px; }
+    .sp-feature-card {
+      background: #fff;
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 20px 28px;
-      margin-top: 16px;
-      font-size: 14px;
-      color: var(--text-3);
+      padding: 28px 32px;
+    }
+    .sp-feature-icon {
+      width: 40px; height: 40px;
+      background: rgba(232,71,26,0.08);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      margin-bottom: 14px;
+    }
+    .sp-feature-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .sp-feature-text { font-size: 14px; color: var(--text-2); line-height: 1.65; }
+    @media (max-width: 900px) {
+      .sp-hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .sp-hero { min-height: auto; }
     }
   </style>
 </head>
 <body>
-
+  <div class="progress-bar" id="progressBar"></div>
   <div id="site-nav"></div>
   <script src="nav.js"></script>
 
-  <section class="service-hero">
-    <div class="service-hero-inner">
-      <span class="section-tag">TikTok Content</span>
-      <h1>Content built around <em>hooks that sell.</em></h1>
-      <p>We map every video to your product's strongest angles — then brief, produce and optimise until it converts.</p>
-      <div>
-        <a href="/contact.html" class="btn btn-primary btn-lg">Book a Free Audit</a>
+  <section class="sp-hero">
+    <div class="sp-hero-inner">
+      <div class="sp-hero-left">
+        <span class="section-tag">TikTok Content</span>
+        <h1>Content built around <em>hooks that sell.</em></h1>
+        <p>Views are vanity. Sales are the point. We develop content strategies, hooks, and creator briefs mapped entirely to your product's buying psychology — not what looks good in a report.</p>
+        <a href="/contact.html" class="btn btn-primary btn-lg">Book a Free Audit &rarr;</a>
+        <div class="sp-stat-row">
+          <div>
+            <span class="sp-stat-val">75M+</span>
+            <span class="sp-stat-label">Views generated</span>
+          </div>
+          <div>
+            <span class="sp-stat-val">1M+</span>
+            <span class="sp-stat-label">Views, single video</span>
+          </div>
+          <div>
+            <span class="sp-stat-val">215</span>
+            <span class="sp-stat-label">Units, one video</span>
+          </div>
+        </div>
       </div>
-      <div class="placeholder-notice">
-        &#9998;&nbsp; Full page coming soon &mdash; <a href="/contact.html" style="color:var(--accent);font-weight:600;">get in touch in the meantime</a>
+      <div class="sp-hero-right">
+        <div class="sp-feature-card">
+          <div class="sp-feature-icon">&#128161;</div>
+          <div class="sp-feature-title">Creative strategy and research</div>
+          <div class="sp-feature-text">We analyse your competitors, viral trends, and buyer psychology to identify content angles that have not been saturated yet.</div>
+        </div>
+        <div class="sp-feature-card">
+          <div class="sp-feature-icon">&#127918;</div>
+          <div class="sp-feature-title">Hook development</div>
+          <div class="sp-feature-text">The first 2 seconds determine everything. We write and test hooks built around stopping the scroll and driving through to purchase.</div>
+        </div>
+        <div class="sp-feature-card">
+          <div class="sp-feature-icon">&#128221;</div>
+          <div class="sp-feature-title">Creator briefs</div>
+          <div class="sp-feature-text">Every affiliate gets a proper brief — angle, hook, key messages, do's and don'ts. No more hoping creators will figure it out themselves.</div>
+        </div>
+        <div class="sp-feature-card">
+          <div class="sp-feature-icon">&#128202;</div>
+          <div class="sp-feature-title">Performance analysis</div>
+          <div class="sp-feature-text">We track what converts versus what just gets views, then double down on winning angles and cut what is not working.</div>
+        </div>
       </div>
     </div>
   </section>
 
+  <section class="section" style="background: var(--bg-2);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">The Process</span>
+        <h2 class="section-title">How we build a content engine.</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <h3>Category Analysis</h3>
+          <p>We map what is working in your category right now — top-performing content, viral hooks, and the angles competitors are missing.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <h3>Strategy and Angles</h3>
+          <p>We identify 5-10 proven content angles for your product. Each one is mapped to a specific buyer emotion or buying trigger.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <h3>Brief and Deploy</h3>
+          <p>Briefs go to your affiliate community. We make sure every creator knows exactly what to say, how to say it, and what the goal is.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <h3>Test, Learn, Scale</h3>
+          <p>We track performance by angle, creator, and hook. Winners get scaled with Spark Ads. Losers get cut. The content engine gets stronger every week.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured-case-section">
+    <div class="container">
+      <div class="featured-case-inner">
+        <div class="featured-case-text">
+          <span class="section-tag">Case Study</span>
+          <h2 class="featured-case-title">A single piece of content drove £3,514 GMV and 1 million views for EMF Publishing</h2>
+          <p class="featured-case-sub">One well-briefed creator video. 1,000,000+ views. 215 units sold. £3,514 GMV from a single post. That is what the right angle, hook, and brief can do.</p>
+          <a href="/case-study-emf.html" class="btn btn-primary featured-case-cta" style="margin-top:8px;display:inline-block;">Read full case study</a>
+        </div>
+        <div class="featured-case-media">
+          <img src="screenshot-99dates-tiktok-2.jpg" alt="99 Dates to Remember TikTok content" class="featured-case-img" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner">
+        <span class="section-tag">Get Started</span>
+        <h2 class="cta-title">Ready to build content<br />that actually converts?</h2>
+        <p class="cta-sub">Book a free audit. We will identify your strongest content angles and show you exactly how to use them.</p>
+        <div class="cta-actions">
+          <a href="/contact.html" class="btn btn-primary btn-lg">Book a Free Audit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-top">
@@ -105,8 +214,8 @@
           <div class="footer-col">
             <h4>Services</h4>
             <a href="/affiliate-management.html">Affiliate Management</a>
-            <a href="/shop-optimisation.html">Shop Optimisation</a>
             <a href="/tiktok-content.html">TikTok Content</a>
+            <a href="/shop-optimisation.html">Shop Optimisation</a>
             <a href="/paid-media.html">Paid Media</a>
           </div>
           <div class="footer-col">
@@ -130,9 +239,16 @@
       </div>
     </div>
   </footer>
-
+  <div class="cookie-notice" id="cookieNotice">
+    <p>We use cookies to improve your experience. By continuing to use this site, you agree to our use of cookies.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-primary" id="cookieAccept" style="padding:8px 20px;font-size:13px;min-height:36px;">Accept</button>
+      <a href="#" class="cookie-dismiss">Dismiss</a>
+    </div>
+  </div>
+  <button class="scroll-top" id="scrollTop" aria-label="Back to top">&uarr;</button>
   <script src="gsap.min.js"></script>
   <script src="ScrollTrigger.min.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
