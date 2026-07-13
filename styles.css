@@ -876,7 +876,7 @@ img { max-width: 100%; display: block; }
 .brand-placeholder { display: none; }
 .featured-case-section {
   padding: 100px 0;
-  background: #7B2418;
+  background: #E8471A;
   border: none;
 }
 .featured-case-inner {
@@ -895,7 +895,7 @@ img { max-width: 100%; display: block; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: #C9956A;
+  color: rgba(255,255,255,0.70);
   display: block;
 }
 .featured-case-title {
@@ -909,11 +909,11 @@ img { max-width: 100%; display: block; }
 }
 .featured-case-title em {
   font-style: italic;
-  color: #C9956A;
+  color: #FFFFFF;
 }
 .featured-case-sub {
   font-size: 15px;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.80);
   line-height: 1.75;
   margin: 0;
   max-width: 480px;
@@ -931,21 +931,21 @@ img { max-width: 100%; display: block; }
 .featured-case-stat-val {
   font-size: 32px;
   font-weight: 800;
-  color: #C9956A;
+  color: #FFFFFF;
   letter-spacing: -0.03em;
   line-height: 1;
 }
 .featured-case-stat-label {
   font-size: 11px;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.65);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 600;
 }
 .featured-case-cta {
   align-self: start;
-  background: #C9956A;
-  color: #fff;
+  background: #FFFFFF;
+  color: #E8471A;
   border: none;
   padding: 14px 28px;
   border-radius: 100px;
@@ -954,27 +954,27 @@ img { max-width: 100%; display: block; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 .featured-case-cta:hover {
-  background: #B8845A;
+  background: rgba(255,255,255,0.88);
 }
 .featured-case-media {
   position: relative;
 }
-.featured-case-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+.featured-case-img-wrap {
+  width: 100%;
+  height: 520px;
   border-radius: 16px;
   overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.25);
 }
-.featured-case-grid-img {
+.featured-case-img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 35%;
   display: block;
-  border-radius: 8px;
 }
 
 /* ============================================================
