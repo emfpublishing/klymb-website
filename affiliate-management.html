@@ -5,135 +5,238 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Affiliate Management | Tockit TikTok Shop Agency</title>
-  <meta name="description" content="Tockit's TikTok Shop affiliate management service. We recruit, manage and scale creator communities that drive real sales." />
+  <meta name="description" content="We recruit, manage and scale TikTok creator communities that drive real sales. Hand-picked affiliates, ongoing management, performance incentives." />
+  <link rel="canonical" href="https://tockitagency.co.uk/affiliate-management" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .service-hero {
-      min-height: 80vh;
+    .sp-hero {
+      min-height: 75vh;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
       padding: calc(var(--banner-h) + var(--nav-h) + 80px) 24px 100px;
       background: var(--bg);
       position: relative;
       overflow: hidden;
     }
-    .service-hero::before {
+    .sp-hero::before {
       content: '';
       position: absolute;
       top: -80px; left: 50%; transform: translateX(-50%);
-      width: 600px; height: 400px;
+      width: 700px; height: 500px;
       background: radial-gradient(circle, rgba(232,71,26,0.07) 0%, transparent 70%);
-      filter: blur(60px);
+      filter: blur(80px);
       pointer-events: none;
     }
-    .service-hero-inner {
+    .sp-hero-inner {
       position: relative;
-      max-width: 720px;
+      max-width: 1100px;
       margin: 0 auto;
-    }
-    .service-hero .section-tag {
-      margin-bottom: 28px;
-    }
-    .service-hero h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(42px, 7vw, 72px);
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-      color: var(--text);
-      margin-bottom: 24px;
-    }
-    .service-hero h1 em {
-      font-style: italic;
-      color: var(--accent);
-    }
-    .service-hero p {
-      font-size: 18px;
-      color: var(--text-2);
-      line-height: 1.7;
-      max-width: 560px;
-      margin: 0 auto 40px;
-    }
-    .placeholder-notice {
-      display: inline-flex;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
       align-items: center;
-      gap: 10px;
-      background: var(--bg-2);
+    }
+    .sp-hero-left h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(40px, 5.5vw, 68px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin: 16px 0 24px;
+    }
+    .sp-hero-left h1 em { font-style: italic; color: var(--accent); }
+    .sp-hero-left p {
+      font-size: 17px;
+      color: var(--text-2);
+      line-height: 1.72;
+      margin-bottom: 36px;
+      max-width: 480px;
+    }
+    .sp-stat-row {
+      display: flex;
+      gap: 40px;
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+    .sp-stat-val { display: block; font-size: 32px; font-weight: 800; color: var(--accent); letter-spacing: -0.03em; line-height: 1; margin-bottom: 4px; }
+    .sp-stat-label { font-size: 12px; font-weight: 600; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em; }
+    .sp-hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .sp-feature-card {
+      background: #fff;
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 20px 28px;
-      margin-top: 16px;
-      font-size: 14px;
-      color: var(--text-3);
+      padding: 28px 32px;
+    }
+    .sp-feature-icon {
+      width: 40px; height: 40px;
+      background: rgba(232,71,26,0.08);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      margin-bottom: 14px;
+    }
+    .sp-feature-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .sp-feature-text { font-size: 14px; color: var(--text-2); line-height: 1.65; }
+    @media (max-width: 900px) {
+      .sp-hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .sp-hero { min-height: auto; }
     }
   </style>
 </head>
 <body>
 
+  <div class="progress-bar" id="progressBar"></div>
   <div id="site-nav"></div>
   <script src="nav.js"></script>
 
-  <section class="service-hero">
-    <div class="service-hero-inner">
-      <span class="section-tag">Affiliate Management</span>
-      <h1>Creators who <em>actually convert.</em></h1>
-      <p>We build and manage affiliate communities of hand-picked TikTok creators — focused entirely on sales, not vanity metrics.</p>
-      <div>
-        <a href="/contact.html" class="btn btn-primary btn-lg">Book a Free Audit</a>
+  <!-- HERO -->
+  <section class="sp-hero">
+    <div class="sp-hero-inner">
+      <div class="sp-hero-left">
+        <span class="section-tag">Affiliate Management</span>
+        <h1>Creators who <em>actually convert.</em></h1>
+        <p>We build and manage affiliate communities of hand-picked TikTok creators. Every creator is recruited for your specific product, briefed properly, and managed to perform — not just post.</p>
+        <a href="/contact.html" class="btn btn-primary btn-lg">Book a Free Audit &rarr;</a>
+        <div class="sp-stat-row">
+          <div>
+            <span class="sp-stat-val">700+</span>
+            <span class="sp-stat-label">Affiliates managed</span>
+          </div>
+          <div>
+            <span class="sp-stat-val">£200k</span>
+            <span class="sp-stat-label">Peak monthly GMV</span>
+          </div>
+          <div>
+            <span class="sp-stat-val">75M+</span>
+            <span class="sp-stat-label">Views generated</span>
+          </div>
+        </div>
       </div>
-      <div class="placeholder-notice">
-        &#9998;&nbsp; Full page coming soon &mdash; <a href="/contact.html" style="color:var(--accent);font-weight:600;">get in touch in the meantime</a>
+      <div class="sp-hero-right">
+        <div class="sp-feature-card">
+          <div class="sp-feature-icon">&#127919;</div>
+          <div class="sp-feature-title">Targeted creator sourcing</div>
+          <div class="sp-feature-text">We identify creators whose audience matches your buyer — not just creators with large follower counts. Relevance drives conversion.</div>
+        </div>
+        <div class="sp-feature-card">
+          <div class="sp-feature-icon">&#128240;</div>
+          <div class="sp-feature-title">Full outreach and onboarding</div>
+          <div class="sp-feature-text">We handle all outreach, negotiations, product seeding, and creator onboarding so you do not have to lift a finger.</div>
+        </div>
+        <div class="sp-feature-card">
+          <div class="sp-feature-icon">&#128200;</div>
+          <div class="sp-feature-title">Performance incentives</div>
+          <div class="sp-feature-text">Cash rewards, exclusive campaigns, and monthly competitions keep your creator community engaged and posting consistently.</div>
+        </div>
+        <div class="sp-feature-card">
+          <div class="sp-feature-icon">&#9654;</div>
+          <div class="sp-feature-title">Top creators on retainer</div>
+          <div class="sp-feature-text">The best performers get offered long-term retainers — securing reliable content output from creators who have already proven they convert.</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CASE STUDY -->
-  <section class="section" style="background:var(--bg-2);">
+  <!-- HOW IT WORKS -->
+  <section class="section" style="background: var(--bg-2);">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Case Study</span>
-        <h2 class="section-title">Results that speak.</h2>
+        <span class="section-tag">The Process</span>
+        <h2 class="section-title">How we build your affiliate engine.</h2>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px;max-width:900px;margin:0 auto;">
-        <div class="case-card case-card--large">
-          <div class="case-tag">GMV Growth</div>
-          <div class="case-brand">Fuzz Off</div>
-          <div class="case-result">5&#xD7; GMV</div>
-          <p class="case-desc">Hair removal spray and dermaplaner. We took Fuzz Off from zero to 5x GMV in their first month. All driven by affiliate content and creator outreach.</p>
-          <div class="case-growth-row">
-            <div class="case-growth-item"><span class="case-growth-label">Before</span><span class="case-growth-val">£0 GMV</span></div>
-            <div class="case-growth-arrow">&#8594;</div>
-            <div class="case-growth-item"><span class="case-growth-label">Month 1</span><span class="case-growth-val case-growth-val--up">5&#xD7; Growth</span></div>
-          </div>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <h3>Category Research</h3>
+          <p>We map the creator landscape in your category — who is posting, what is converting, and which creators have audiences that match your buyer profile.</p>
         </div>
-        <div class="case-card">
-          <div class="case-tag">Revenue Growth</div>
-          <div class="case-brand">Petibo Pet</div>
-          <div class="case-result">£50k/mo</div>
-          <p class="case-desc">Pet hair broom for carpets and floors. Hit £50k GMV in a single month within 3 months. Driven by affiliate content built around the before and after.</p>
-          <div class="case-growth-row">
-            <div class="case-growth-item"><span class="case-growth-label">Before</span><span class="case-growth-val">£0 GMV</span></div>
-            <div class="case-growth-arrow">&#8594;</div>
-            <div class="case-growth-item"><span class="case-growth-label">Month 3</span><span class="case-growth-val case-growth-val--up">£50k/mo</span></div>
-          </div>
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <h3>Outreach Sprint</h3>
+          <p>Targeted outreach to hundreds of relevant creators. We personalise every message, handle all negotiations, and get creators onboarded fast.</p>
         </div>
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <h3>Briefing and Seeding</h3>
+          <p>Every creator gets a proper brief — hooks, angles, key product benefits, and examples. Products are shipped and tracked. Nothing left to chance.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <h3>Manage and Scale</h3>
+          <p>We monitor performance, follow up with non-posters, reward top performers, and continuously recruit new creators to keep momentum building.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Results</span>
+        <h2 class="section-title">What affiliate management delivers.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:1000px;margin:0 auto;">
+        <a href="/case-study-emf.html" class="case-card case-card--link">
+          <div class="case-tag">Books &amp; Gifting</div>
+          <div class="case-brand">EMF Publishing</div>
+          <div class="case-result">£200k/mo</div>
+          <p class="case-desc">Built a 700+ creator affiliate programme from scratch. Drove £200k in a single month. Reached #1 in the Books category on TikTok Shop UK.</p>
+          <div class="case-growth-row">
+            <div class="case-growth-item"><span class="case-growth-label">Start</span><span class="case-growth-val">£0 GMV</span></div>
+            <div class="case-growth-arrow">&#8594;</div>
+            <div class="case-growth-item"><span class="case-growth-label">Month 5</span><span class="case-growth-val case-growth-val--up">£200k/mo</span></div>
+          </div>
+          <span class="case-cta">Read case study &#8594;</span>
+        </a>
         <div class="case-card">
-          <div class="case-tag">Affiliate Growth</div>
+          <div class="case-tag">FMCG</div>
           <div class="case-brand">Doughnotts</div>
-          <div class="case-result">250 affiliates</div>
-          <p class="case-desc">Nottingham donut brand selling fresh DTC via TikTok Shop. 250 affiliates onboarded in the first 2 weeks.</p>
+          <div class="case-result">500 affiliates</div>
+          <p class="case-desc">Recruited and cultivated 500 TikTok Shop affiliates in the first 60 days from launch. Rapid onboarding at scale.</p>
           <div class="case-growth-row">
-            <div class="case-growth-item"><span class="case-growth-label">Before</span><span class="case-growth-val">0 affiliates</span></div>
+            <div class="case-growth-item"><span class="case-growth-label">Day 1</span><span class="case-growth-val">0 affiliates</span></div>
             <div class="case-growth-arrow">&#8594;</div>
-            <div class="case-growth-item"><span class="case-growth-label">Week 2</span><span class="case-growth-val case-growth-val--up">250 creators</span></div>
+            <div class="case-growth-item"><span class="case-growth-label">Day 60</span><span class="case-growth-val case-growth-val--up">500 creators</span></div>
+          </div>
+        </div>
+        <div class="case-card">
+          <div class="case-tag">Beauty</div>
+          <div class="case-brand">Fuzz Off</div>
+          <div class="case-result">£20k in 60 days</div>
+          <p class="case-desc">Affiliate-led strategy took Fuzz Off from £2k to £20k in 60 days. Creator content built around the before/after angle drove consistent conversions.</p>
+          <div class="case-growth-row">
+            <div class="case-growth-item"><span class="case-growth-label">Month 1</span><span class="case-growth-val">£2k/mo</span></div>
+            <div class="case-growth-arrow">&#8594;</div>
+            <div class="case-growth-item"><span class="case-growth-label">Month 2</span><span class="case-growth-val case-growth-val--up">£20k/mo</span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner">
+        <span class="section-tag">Get Started</span>
+        <h2 class="cta-title">Ready to build your<br />affiliate engine?</h2>
+        <p class="cta-sub">Book a free audit. We will map out exactly what your affiliate strategy should look like.</p>
+        <div class="cta-actions">
+          <a href="/contact.html" class="btn btn-primary btn-lg">Book a Free Audit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-top">
@@ -150,8 +253,8 @@
           <div class="footer-col">
             <h4>Services</h4>
             <a href="/affiliate-management.html">Affiliate Management</a>
-            <a href="/shop-optimisation.html">Shop Optimisation</a>
             <a href="/tiktok-content.html">TikTok Content</a>
+            <a href="/shop-optimisation.html">Shop Optimisation</a>
             <a href="/paid-media.html">Paid Media</a>
           </div>
           <div class="footer-col">
@@ -176,8 +279,17 @@
     </div>
   </footer>
 
+  <div class="cookie-notice" id="cookieNotice">
+    <p>We use cookies to improve your experience. By continuing to use this site, you agree to our use of cookies.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-primary" id="cookieAccept" style="padding:8px 20px;font-size:13px;min-height:36px;">Accept</button>
+      <a href="#" class="cookie-dismiss">Dismiss</a>
+    </div>
+  </div>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Back to top">&uarr;</button>
   <script src="gsap.min.js"></script>
   <script src="ScrollTrigger.min.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>

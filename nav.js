@@ -27,9 +27,9 @@
             <li><a href="/paid-media.html">Paid Media</a></li>
           </ul>
         </li>
-        <li><a href="${p('#why')}">Why Us</a></li>
         <li><a href="${p('#how-it-works')}">How It Works</a></li>
-        <li><a href="${p('#work')}">Work</a></li>
+        <li><a href="${p('#work')}">Results</a></li>
+        <li><a href="${p('#testimonials')}">Testimonials</a></li>
         <li><a href="${p('#about')}">About</a></li>
       </ul>
       <a href="/contact.html" class="btn nav-cta-pill">Book a Free Audit</a>
@@ -39,9 +39,9 @@
     </div>
     <div class="nav-mobile" id="mobileMenu">
       <a href="${p('#services')}">Services</a>
-      <a href="${p('#why')}">Why Us</a>
       <a href="${p('#how-it-works')}">How It Works</a>
-      <a href="${p('#work')}">Work</a>
+      <a href="${p('#work')}">Results</a>
+      <a href="${p('#testimonials')}">Testimonials</a>
       <a href="${p('#about')}">About</a>
       <a href="/contact.html" class="btn btn-primary">Book a Free Audit</a>
     </div>
