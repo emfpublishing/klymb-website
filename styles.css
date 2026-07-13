@@ -829,42 +829,49 @@ img { max-width: 100%; display: block; }
 .case-growth-arrow { color: var(--accent); font-size: 18px; flex-shrink: 0; }
 
 .brands-section {
-  padding: 48px 0 56px;
-  margin-top: 0;
+  padding: 0;
+  margin-top: 40px;
   width: 100%;
-  background: var(--bg);
+  overflow: hidden;
 }
-.brands-label-wrap { text-align: center; margin-bottom: 36px; }
+.brands-label-wrap { text-align: center; margin-bottom: 20px; }
 .brands-label {
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.12em;
   color: var(--text-3);
   margin: 0;
 }
-.brands-static-row {
+.brands-ticker {
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+.brands-track {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 64px;
-  flex-wrap: wrap;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 40px;
+  gap: 72px;
+  width: max-content;
+  animation: brandScroll 28s linear infinite;
+  will-change: transform;
+}
+@keyframes brandScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 .brand-logo {
-  height: 52px;
+  height: 72px;
   width: auto;
-  max-width: 140px;
+  max-width: 180px;
   object-fit: contain;
-  opacity: 0.5;
+  opacity: 0.55;
   filter: grayscale(1);
-  transition: opacity 0.2s ease, filter 0.2s ease;
   border-radius: 4px;
   flex-shrink: 0;
+  pointer-events: none;
 }
-.brand-logo:hover { opacity: 0.85; filter: grayscale(0); }
 .brands-grid { display: none; }
 .brand-placeholder { display: none; }
 .featured-case-section {
