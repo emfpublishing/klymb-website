@@ -2,9 +2,9 @@
    DESIGN TOKENS — warm light theme (BeaSocial-inspired)
    ============================================================ */
 :root {
-  --bg:           #FAFAF8;
-  --bg-2:         #F4F3F0;
-  --bg-3:         #EDECEA;
+  --bg:           #F5F0E8;
+  --bg-2:         #EDE8DE;
+  --bg-3:         #E5DDD0;
   --border:       rgba(0,0,0,0.08);
   --border-hover: rgba(0,0,0,0.16);
 
@@ -12,9 +12,9 @@
   --text-2:       #5C564F;
   --text-3:       #9C948C;
 
-  --accent:       #E8471A;
-  --accent-2:     #F06030;
-  --accent-glow:  rgba(232,71,26,0.20);
+  --accent:       #1B4FFF;
+  --accent-2:     #4070FF;
+  --accent-glow:  rgba(27,79,255,0.20);
 
   --radius-sm:    8px;
   --radius:       14px;
@@ -775,7 +775,7 @@ img { max-width: 100%; display: block; }
 .case-card--large {
   grid-row: span 2;
   background: linear-gradient(160deg, rgba(232,71,26,0.06) 0%, #fff 60%);
-  border-color: rgba(232,71,26,0.20);
+  border-color: rgba(27,79,255,0.20);
 }
 .case-tag {
   display: inline-block;
