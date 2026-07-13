@@ -1567,3 +1567,73 @@ img { max-width: 100%; display: block; }
   background: var(--bg-2) !important;
   color: var(--text);
 }
+
+/* ============================================================
+   WORK GRID
+   ============================================================ */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.work-grid .case-card--large {
+  grid-column: span 3;
+}
+@media (max-width: 900px) {
+  .work-grid { grid-template-columns: 1fr 1fr; }
+  .work-grid .case-card--large { grid-column: span 2; }
+}
+@media (max-width: 600px) {
+  .work-grid { grid-template-columns: 1fr; }
+  .work-grid .case-card--large { grid-column: span 1; }
+}
+.case-card--link { text-decoration: none; color: inherit; display: block; cursor: pointer; }
+.case-card--link:hover { transform: translateY(-4px); box-shadow: 0 20px 48px rgba(0,0,0,0.1); }
+.case-cta { display: inline-block; margin-top: 16px; font-size: 13px; font-weight: 700; color: var(--accent); letter-spacing: 0.03em; text-transform: uppercase; }
+
+/* ============================================================
+   ABOUT SECTION
+   ============================================================ */
+.about-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.about-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+.about-body {
+  font-size: 16px;
+  color: var(--text-2);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+.about-card {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+}
+.about-stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.about-stat { text-align: center; }
+.about-stat-val { display: block; font-size: 36px; font-weight: 800; color: var(--accent); letter-spacing: -0.03em; line-height: 1; margin-bottom: 6px; }
+.about-stat-label { font-size: 12px; font-weight: 600; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em; }
+.about-model-box { background: var(--accent); border-radius: var(--radius); padding: 24px 28px; }
+.about-model-title { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.about-model-text { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.6; }
+@media (max-width: 900px) {
+  .about-inner { grid-template-columns: 1fr; gap: 48px; }
+}
+
