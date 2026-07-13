@@ -1192,16 +1192,15 @@ img { max-width: 100%; display: block; }
   justify-content: center;
   gap: 12px;
 }
-.founder-photo-icon {
-  font-size: 36px;
-  opacity: 0.5;
-}
-.founder-photo-label {
-  font-size: 13px;
-  font-weight: 600;
-  color: rgba(255,255,255,0.45);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
+.founder-photo-img {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: 50% 30%;
+  border-radius: 20px;
+  display: block;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.30);
 }
 }
 .about-inner {
