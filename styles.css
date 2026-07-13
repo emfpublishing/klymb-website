@@ -1131,6 +1131,79 @@ img { max-width: 100%; display: block; }
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
+
+/* ============================================================
+   MEET THE FOUNDER
+   ============================================================ */
+.founder-section {
+  padding: 100px 0;
+  background: #7B2418;
+}
+.founder-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.founder-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.founder-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(40px, 5.5vw, 72px);
+  font-weight: 400;
+  font-style: italic;
+  color: #FFFFFF;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 0;
+}
+.founder-name {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.65);
+  margin: 0;
+}
+.founder-bio {
+  font-size: 15px;
+  color: rgba(255,255,255,0.80);
+  line-height: 1.75;
+  margin: 0;
+  max-width: 520px;
+}
+.founder-photo {
+  display: flex;
+  justify-content: center;
+}
+.founder-photo-placeholder {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 3/4;
+  background: rgba(255,255,255,0.08);
+  border: 2px dashed rgba(255,255,255,0.30);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.founder-photo-icon {
+  font-size: 36px;
+  opacity: 0.5;
+}
+.founder-photo-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+}
 .about-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
