@@ -1202,6 +1202,21 @@ img { max-width: 100%; display: block; }
   display: block;
   box-shadow: 0 24px 64px rgba(0,0,0,0.30);
 }
+.founder-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 14px 28px;
+  background: #fff;
+  color: #7B2418;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+  align-self: start;
+}
+.founder-cta:hover { background: rgba(255,255,255,0.88); }
 }
 .about-inner {
   display: grid;
