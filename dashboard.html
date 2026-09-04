@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finance Dashboard - Morgan Fearon</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { 
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background: #0f0f23;
+    color: #e0e0e0;
+    padding: 20px;
+    line-height: 1.6;
+  }
+  .container { max-width: 1400px; margin: 0 auto; }
+  
+  header { 
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border: 1px solid #2a2a3e;
+  }
+  h1 { 
+    font-size: 32px;
+    margin-bottom: 8px;
+    color: #fff;
+  }
+  .subtitle { 
+    color: #888;
+    font-size: 14px;
+  }
+  
+  .grid { 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .card {
+    background: #1a1a2e;
+    border: 1px solid #2a2a3e;
+    border-radius: 12px;
+    padding: 24px;
+  }
+  
+  .card h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #fff;
+    border-bottom: 2px solid #ee78a3;
+    padding-bottom: 8px;
+  }
+  
+  .metric {
+    margin-bottom: 20px;
+  }
+  
+  .metric-label {
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  
+  .metric-value {
+    font-size: 32px;
+    font-weight: 600;
+    color: #fff;
+  }
+  
+  .metric-value.highlight {
+    color: #ee78a3;
+  }
+  
+  .metric-value.success {
+    color: #4caf50;
+  }
+  
+  .metric-value.warning {
+    color: #ff9800;
+  }
+  
+  .metric-value.danger {
+    color: #f44336;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #2a2a3e;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 8px;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ee78a3, #ce89a3);
+    transition: width 0.3s ease;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+  }
+  
+  th {
+    text-align: left;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #888;
+    padding: 8px 12px;
+    border-bottom: 1px solid #2a2a3e;
+    letter-spacing: 1px;
+  }
+  
+  td {
+    padding: 12px;
+    border-bottom: 1px solid #1a1a2e;
+    font-size: 14px;
+  }
+  
+  tr:hover {
+    background: #16213e;
+  }
+  
+  .editable {
+    background: transparent;
+    border: 1px solid #2a2a3e;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: inherit;
+    width: 100px;
+  }
+  
+  .editable:focus {
+    outline: none;
+    border-color: #ee78a3;
+  }
+  
+  .status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .status-badge.on-track { background: #4caf50; color: #fff; }
+  .status-badge.behind { background: #ff9800; color: #fff; }
+  .status-badge.critical { background: #f44336; color: #fff; }
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .section-title {
+    font-size: 24px;
+    color: #fff;
+  }
+  
+  .btn {
+    background: #ee78a3;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .btn:hover {
+    background: #ce89a3;
+  }
+  
+  .channel-breakdown {
+    display: grid;
+    gap: 12px;
+    margin-top: 12px;
+  }
+  
+  .channel-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: #16213e;
+    border-radius: 6px;
+    border-left: 3px solid #ee78a3;
+  }
+  
+  .channel-name {
+    font-size: 14px;
+    color: #e0e0e0;
+  }
+  
+  .channel-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+  }
+  
+  .debt-tracker {
+    margin-top: 20px;
+  }
+  
+  .debt-remaining {
+    font-size: 14px;
+    color: #888;
+    margin-top: 4px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Finance Dashboard</h1>
+    <p class="subtitle">Updated: <span id="last-updated">04 September 2026</span></p>
+  </header>
+  
+  <div class="section-header">
+    <h2 class="section-title">Overview</h2>
+    <button class="btn" onclick="saveData()">Save Changes</button>
+  </div>
+  
+  <div class="grid">
+    <div class="card">
+      <h2>Total Revenue (Sep 2026)</h2>
+      <div class="metric">
+        <div class="metric-label">Month to Date</div>
+        <div class="metric-value highlight">£<span id="total-revenue">0</span></div>
+      </div>
+      <div class="channel-breakdown">
+        <div class="channel-item">
+          <span class="channel-name">EMF Publishing</span>
+          <span class="channel-value">£<input type="number" class="editable" id="emf-revenue" value="0" oninput="updateTotals()"></span>
+        </div>
+        <div class="channel-item">
+          <span class="channel-name">Tockit Agency</span>
+          <span class="channel-value">£<input type="number" class="editable" id="tockit-revenue" value="0" oninput="updateTotals()"></span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h2>£2M Target Progress</h2>
+      <div class="metric">
+        <div class="metric-label">Annual Progress</div>
+        <div class="metric-value">£<span id="ytd-revenue">0</span> / £2,000,000</div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="target-progress" style="width: 0%"></div>
+        </div>
+      </div>
+      <div class="metric" style="margin-top: 20px;">
+        <div class="metric-label">Monthly Run Rate Needed</div>
+        <div class="metric-value warning">£150,000</div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h2>Debt Repayment</h2>
+      <div class="metric">
+        <div class="metric-label">Remaining</div>
+        <div class="metric-value danger">£<input type="number" class="editable" id="debt-remaining" value="37000" oninput="updateDebt()" style="width: 150px;"></div>
+        <p class="debt-remaining">Original: £37,000 | Monthly: £5,000</p>
+        <div class="progress-bar">
+          <div class="progress-fill" id="debt-progress" style="width: 0%; background: linear-gradient(90deg, #4caf50, #8bc34a);"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="section-header">
+    <h2 class="section-title">EMF Publishing</h2>
+  </div>
+  
+  <div class="grid">
+    <div class="card">
+      <h2>Channel Breakdown (Sep 2026)</h2>
+      <div class="channel-breakdown">
+        <div class="channel-item">
+          <span class="channel-name">TikTok Shop</span>
+          <span class="channel-value">£<input type="number" class="editable" id="emf-tiktok" value="0" oninput="updateEMFTotal()"></span>
+        </div>
+        <div class="channel-item">
+          <span class="channel-name">Shopify DTC</span>
+          <span class="channel-value">£<input type="number" class="editable" id="emf-shopify" value="0" oninput="updateEMFTotal()"></span>
+        </div>
+        <div class="channel-item">
+          <span class="channel-name">Wholesale</span>
+          <span class="channel-value">£<input type="number" class="editable" id="emf-wholesale" value="0" oninput="updateEMFTotal()"></span>
+        </div>
+        <div class="channel-item">
+          <span class="channel-name">Amazon</span>
+          <span class="channel-value">£<input type="number" class="editable" id="emf-amazon" value="0" oninput="updateEMFTotal()"></span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" style="grid-column: span 2;">
+      <h2>Monthly Targets vs Actuals</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Target</th>
+            <th>Actual</th>
+            <th>Variance</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="emf-monthly-table">
+          <tr>
+            <td>Jan 2026</td>
+            <td>£15,000</td>
+            <td><input type="number" class="editable" value="0"></td>
+            <td>-</td>
+            <td><span class="status-badge behind">Behind</span></td>
+          </tr>
+          <tr>
+            <td>Feb 2026</td>
+            <td>£20,000</td>
+            <td><input type="number" class="editable" value="0"></td>
+            <td>-</td>
+            <td><span class="status-badge behind">Behind</span></td>
+          </tr>
+          <tr>
+            <td>Mar 2026</td>
+            <td>£25,000</td>
+            <td><input type="number" class="editable" value="0"></td>
+            <td>-</td>
+            <td><span class="status-badge behind">Behind</span></td>
+          </tr>
+          <tr>
+            <td>Apr 2026</td>
+            <td>£25,000</td>
+            <td><input type="number" class="editable" value="0"></td>
+            <td>-</td>
+            <td><span class="status-badge behind">Behind</span></td>
+          </tr>
+          <tr>
+            <td>May 2026</td>
+            <td>£30,000</td>
+            <td><input type="number" class="editable" value="0"></td>
+            <td>-</td>
+            <td><span class="status-badge behind">Behind</span></td>
+          </tr>
+          <tr>
+            <td>Jun 2026</td>
+            <td>£40,000</td>
+            <td><input type="number" class="editable" value="0"></td>
+            <td>-</td>
+            <td><span class="status-badge behind">Behind</span></td>
+          </tr>
+          <tr>
+            <td>Jul 2026</td>
+            <td>£50,000</td>
+            <td><input type="number" class="editable" value="0"></td>
+            <td>-</td>
+            <td><span class="status-badge behind">Behind</span></td>
+          </tr>
+          <tr>
+            <td>Aug 2026</td>
+            <td>£60,000</td>
+            <td><input type="number" class="editable" value="0"></td>
+            <td>-</td>
+            <td><span class="status-badge behind">Behind</span></td>
+          </tr>
+          <tr>
+            <td>Sep 2026</td>
+            <td>£70,000</td>
+            <td><input type="number" class="editable" id="emf-sep-actual" value="0"></td>
+            <td>-</td>
+            <td><span class="status-badge behind">Behind</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <div class="section-header" style="margin-top: 30px;">
+    <h2 class="section-title">Tockit Agency</h2>
+  </div>
+  
+  <div class="grid">
+    <div class="card" style="grid-column: span 3;">
+      <h2>Client Revenue (Sep 2026)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Client</th>
+            <th>GMV</th>
+            <th>Fee (10%)</th>
+            <th>Invoiced</th>
+            <th>Paid</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Fuzz Off</td>
+            <td>£<input type="number" class="editable" id="fuzzoff-gmv" value="0" oninput="updateTockitTotal()"></td>
+            <td>£<span id="fuzzoff-fee">0</span></td>
+            <td><input type="checkbox" id="fuzzoff-invoiced"></td>
+            <td><input type="checkbox" id="fuzzoff-paid"></td>
+            <td><span class="status-badge on-track">Active</span></td>
+          </tr>
+          <tr>
+            <td>Petibo Pet</td>
+            <td>£<input type="number" class="editable" id="petibo-gmv" value="0" oninput="updateTockitTotal()"></td>
+            <td>£<span id="petibo-fee">0</span></td>
+            <td><input type="checkbox" id="petibo-invoiced"></td>
+            <td><input type="checkbox" id="petibo-paid"></td>
+            <td><span class="status-badge on-track">Active</span></td>
+          </tr>
+          <tr>
+            <td>Doughnotts</td>
+            <td>£<input type="number" class="editable" id="doughnotts-gmv" value="0" oninput="updateTockitTotal()"></td>
+            <td>£<span id="doughnotts-fee">0</span></td>
+            <td><input type="checkbox" id="doughnotts-invoiced"></td>
+            <td><input type="checkbox" id="doughnotts-paid"></td>
+            <td><span class="status-badge behind">At Risk</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+function updateTotals() {
+  const emfRevenue = parseFloat(document.getElementById('emf-revenue').value) || 0;
+  const tockitRevenue = parseFloat(document.getElementById('tockit-revenue').value) || 0;
+  const totalRevenue = emfRevenue + tockitRevenue;
+  
+  document.getElementById('total-revenue').textContent = totalRevenue.toLocaleString();
+  
+  // Update YTD (this would need to be calculated from all months)
+  const ytd = totalRevenue; // Simplified - should sum all months
+  document.getElementById('ytd-revenue').textContent = ytd.toLocaleString();
+  
+  const progressPercent = (ytd / 2000000) * 100;
+  document.getElementById('target-progress').style.width = progressPercent + '%';
+}
+
+function updateEMFTotal() {
+  const tiktok = parseFloat(document.getElementById('emf-tiktok').value) || 0;
+  const shopify = parseFloat(document.getElementById('emf-shopify').value) || 0;
+  const wholesale = parseFloat(document.getElementById('emf-wholesale').value) || 0;
+  const amazon = parseFloat(document.getElementById('emf-amazon').value) || 0;
+  
+  const total = tiktok + shopify + wholesale + amazon;
+  document.getElementById('emf-revenue').value = total;
+  document.getElementById('emf-sep-actual').value = total;
+  
+  updateTotals();
+}
+
+function updateTockitTotal() {
+  const fuzzoffGMV = parseFloat(document.getElementById('fuzzoff-gmv').value) || 0;
+  const petiboGMV = parseFloat(document.getElementById('petibo-gmv').value) || 0;
+  const doughnottsGMV = parseFloat(document.getElementById('doughnotts-gmv').value) || 0;
+  
+  const fuzzoffFee = fuzzoffGMV * 0.1;
+  const petiboFee = petiboGMV * 0.1;
+  const doughnottsFee = doughnottsGMV * 0.1;
+  
+  document.getElementById('fuzzoff-fee').textContent = fuzzoffFee.toLocaleString();
+  document.getElementById('petibo-fee').textContent = petiboFee.toLocaleString();
+  document.getElementById('doughnotts-fee').textContent = doughnottsFee.toLocaleString();
+  
+  const totalFee = fuzzoffFee + petiboFee + doughnottsFee;
+  document.getElementById('tockit-revenue').value = totalFee.toFixed(2);
+  
+  updateTotals();
+}
+
+function updateDebt() {
+  const remaining = parseFloat(document.getElementById('debt-remaining').value) || 37000;
+  const progressPercent = ((37000 - remaining) / 37000) * 100;
+  document.getElementById('debt-progress').style.width = progressPercent + '%';
+}
+
+function saveData() {
+  const data = {
+    lastUpdated: new Date().toISOString(),
+    emf: {
+      tiktok: document.getElementById('emf-tiktok').value,
+      shopify: document.getElementById('emf-shopify').value,
+      wholesale: document.getElementById('emf-wholesale').value,
+      amazon: document.getElementById('emf-amazon').value
+    },
+    tockit: {
+      fuzzoff: {
+        gmv: document.getElementById('fuzzoff-gmv').value,
+        invoiced: document.getElementById('fuzzoff-invoiced').checked,
+        paid: document.getElementById('fuzzoff-paid').checked
+      },
+      petibo: {
+        gmv: document.getElementById('petibo-gmv').value,
+        invoiced: document.getElementById('petibo-invoiced').checked,
+        paid: document.getElementById('petibo-paid').checked
+      },
+      doughnotts: {
+        gmv: document.getElementById('doughnotts-gmv').value,
+        invoiced: document.getElementById('doughnotts-invoiced').checked,
+        paid: document.getElementById('doughnotts-paid').checked
+      }
+    },
+    debt: document.getElementById('debt-remaining').value
+  };
+  
+  localStorage.setItem('financeData', JSON.stringify(data));
+  alert('✅ Data saved locally');
+}
+
+function loadData() {
+  const saved = localStorage.getItem('financeData');
+  if (saved) {
+    const data = JSON.parse(saved);
+    
+    if (data.emf) {
+      document.getElementById('emf-tiktok').value = data.emf.tiktok || 0;
+      document.getElementById('emf-shopify').value = data.emf.shopify || 0;
+      document.getElementById('emf-wholesale').value = data.emf.wholesale || 0;
+      document.getElementById('emf-amazon').value = data.emf.amazon || 0;
+    }
+    
+    if (data.tockit) {
+      document.getElementById('fuzzoff-gmv').value = data.tockit.fuzzoff?.gmv || 0;
+      document.getElementById('fuzzoff-invoiced').checked = data.tockit.fuzzoff?.invoiced || false;
+      document.getElementById('fuzzoff-paid').checked = data.tockit.fuzzoff?.paid || false;
+      
+      document.getElementById('petibo-gmv').value = data.tockit.petibo?.gmv || 0;
+      document.getElementById('petibo-invoiced').checked = data.tockit.petibo?.invoiced || false;
+      document.getElementById('petibo-paid').checked = data.tockit.petibo?.paid || false;
+      
+      document.getElementById('doughnotts-gmv').value = data.tockit.doughnotts?.gmv || 0;
+      document.getElementById('doughnotts-invoiced').checked = data.tockit.doughnotts?.invoiced || false;
+      document.getElementById('doughnotts-paid').checked = data.tockit.doughnotts?.paid || false;
+    }
+    
+    if (data.debt) {
+      document.getElementById('debt-remaining').value = data.debt;
+    }
+    
+    updateEMFTotal();
+    updateTockitTotal();
+    updateDebt();
+  }
+}
+
+// Load data on page load
+window.addEventListener('load', loadData);
+
+// Auto-save every 30 seconds
+setInterval(saveData, 30000);
+</script>
+</body>
+</html>
