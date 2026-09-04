@@ -217,13 +217,13 @@ img { max-width: 100%; display: block; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #fff;
-  border-radius: 100px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  background: #faf8f5;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
   transition: box-shadow var(--transition);
 }
 .nav.scrolled {
-  box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
 }
 .nav-inner {
   display: flex;
@@ -262,16 +262,16 @@ img { max-width: 100%; display: block; }
 .nav-cta { flex-shrink: 0; }
 .nav-cta-pill {
   flex-shrink: 0;
-  background: var(--accent);
+  background: #ff6b35;
   color: #fff;
   border: none;
-  border-radius: 100px;
+  border-radius: 12px;
   padding: 0 22px;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.02em;
   cursor: pointer;
-  transition: opacity var(--transition), transform var(--transition);
+  transition: opacity var(--transition), transform var(--transition), background var(--transition);
   white-space: nowrap;
   height: 44px;
   display: inline-flex;
