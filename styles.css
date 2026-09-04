@@ -375,9 +375,8 @@ img { max-width: 100%; display: block; }
 .hero-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
+  filter: blur(40px);
   pointer-events: none;
-  will-change: transform;
 }
 .hero-orb--1 {
   width: 480px; height: 480px;
@@ -423,7 +422,6 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-headline {
-  will-change: transform;
   font-family: var(--font-serif);
   font-size: clamp(44px, 8vw, 104px);
   font-weight: 400;
@@ -436,7 +434,6 @@ img { max-width: 100%; display: block; }
   max-width: 1100px;
 }
 .hero-sub {
-  will-change: transform;
   font-size: clamp(17px, 2vw, 21px);
   color: var(--text-2);
   max-width: 560px;
