@@ -27,7 +27,7 @@
             <li><a href="/paid-media.html">Paid Media</a></li>
           </ul>
         </li>
-        <li><a href="/process.html">Our Process</a></li>
+        <li><a href="${p('#how-it-works')}">How It Works</a></li>
         <li><a href="${p('#work')}">Results</a></li>
         <li><a href="${p('#testimonials')}">Testimonials</a></li>
         <li><a href="${p('#about')}">About</a></li>
@@ -39,7 +39,7 @@
     </div>
     <div class="nav-mobile" id="mobileMenu">
       <a href="${p('#services')}">Services</a>
-      <a href="/process.html">Our Process</a>
+      <a href="${p('#how-it-works')}">How It Works</a>
       <a href="${p('#work')}">Results</a>
       <a href="${p('#testimonials')}">Testimonials</a>
       <a href="${p('#about')}">About</a>
