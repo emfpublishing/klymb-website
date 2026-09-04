@@ -1592,6 +1592,10 @@ img { max-width: 100%; display: block; }
 @media (max-width: 768px) {
   .nav-links, .nav-cta, .nav-cta-pill { display: none; }
   .nav-hamburger { display: flex; }
+  .nav {
+    height: auto;
+    min-height: 70px;
+  }
 
   .section { padding: 72px 0; }
   .section-header { margin-bottom: 48px; }
