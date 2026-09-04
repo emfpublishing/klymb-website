@@ -29,6 +29,7 @@
         </li>
         <li><a href="${p('#how-it-works')}">How It Works</a></li>
         <li><a href="${p('#work')}">Results</a></li>
+        <li><a href="/creators.html">Creators</a></li>
         <li><a href="${p('#testimonials')}">Testimonials</a></li>
         <li><a href="${p('#about')}">About</a></li>
       </ul>
@@ -41,6 +42,7 @@
       <a href="${p('#services')}">Services</a>
       <a href="${p('#how-it-works')}">How It Works</a>
       <a href="${p('#work')}">Results</a>
+      <a href="/creators.html">Creators</a>
       <a href="${p('#testimonials')}">Testimonials</a>
       <a href="${p('#about')}">About</a>
       <a href="/contact.html" class="btn btn-primary">Book a Free Audit</a>
