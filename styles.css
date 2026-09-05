@@ -1607,6 +1607,7 @@ img { max-width: 100%; display: block; }
     gap: 20px;
     padding: 24px 20px;
     width: 100%;
+    border: none;
   }
   .stat-divider { display: none; }
   .stat { padding: 0; }
