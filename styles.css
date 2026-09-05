@@ -64,7 +64,7 @@ img { max-width: 100%; display: block; }
   background-clip: text;
   color: transparent;
 }
-.serif { font-family: var(--font-serif); font-weight: 400; }
+.serif { font-family: var(--font-sans); font-weight: 400; }
 
 /* ============================================================
    BUTTONS
@@ -143,7 +143,7 @@ img { max-width: 100%; display: block; }
   font-family: var(--font-sans);
 }
 .section-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(36px, 5vw, 64px);
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -421,7 +421,7 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-headline {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(44px, 8vw, 104px);
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -493,7 +493,7 @@ img { max-width: 100%; display: block; }
 }
 .stat { display: flex; flex-direction: column; align-items: center; padding: 0 36px; }
 .stat-number {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 36px;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -518,7 +518,7 @@ img { max-width: 100%; display: block; }
 }
 .why-left { position: sticky; top: 120px; }
 .why-heading {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(36px, 4.5vw, 60px);
   font-weight: 400;
   letter-spacing: -0.02em;
@@ -622,7 +622,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 28px;
   font-weight: 400;
   color: var(--accent);
@@ -636,7 +636,7 @@ img { max-width: 100%; display: block; }
   transform: translateY(-2px);
 }
 .process-step h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 22px;
   font-weight: 400;
   letter-spacing: -0.01em;
@@ -658,7 +658,7 @@ img { max-width: 100%; display: block; }
   background-image: none;
 }
 .action-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(36px, 5vw, 60px);
   font-weight: 400;
   letter-spacing: -0.02em;
@@ -766,7 +766,7 @@ img { max-width: 100%; display: block; }
   gap: 12px;
 }
 .selected-work-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(36px, 5vw, 60px);
   font-weight: 700;
   color: var(--text);
@@ -850,7 +850,7 @@ img { max-width: 100%; display: block; }
   text-align: right;
 }
 .sw-card-brand {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(24px, 2.5vw, 32px);
   font-weight: 700;
   color: var(--text);
@@ -930,14 +930,14 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.08em;
 }
 .case-brand {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 26px;
   font-weight: 400;
   letter-spacing: -0.02em;
   color: var(--text);
 }
 .case-result {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(40px, 4.5vw, 56px);
   font-weight: 400;
   letter-spacing: -0.03em;
@@ -1038,7 +1038,7 @@ img { max-width: 100%; display: block; }
   display: block;
 }
 .featured-case-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(32px, 4vw, 54px);
   font-weight: 700;
   color: #FFFFFF;
@@ -1145,7 +1145,7 @@ img { max-width: 100%; display: block; }
   gap: 20px;
 }
 .founder-heading {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(40px, 5.5vw, 72px);
   font-weight: 700;
   color: #FFFFFF;
@@ -1218,7 +1218,7 @@ img { max-width: 100%; display: block; }
   align-items: center;
 }
 .about-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(36px, 4.5vw, 60px);
   font-weight: 400;
   line-height: 1.05;
@@ -1250,7 +1250,7 @@ img { max-width: 100%; display: block; }
   gap: 8px;
 }
 .ads-stat-num {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(32px, 3.5vw, 44px);
   font-weight: 400;
   letter-spacing: -0.02em;
@@ -1345,7 +1345,7 @@ img { max-width: 100%; display: block; }
   align-items: center;
 }
 .cta-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(44px, 6vw, 80px);
   font-weight: 400;
   letter-spacing: -0.03em;
@@ -1921,7 +1921,7 @@ img { max-width: 100%; display: block; }
   align-items: start;
 }
 .about-heading {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(32px, 4vw, 52px);
   font-weight: 400;
   letter-spacing: -0.02em;
