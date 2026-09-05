@@ -261,7 +261,7 @@ img { max-width: 100%; display: block; }
 .nav-cta { flex-shrink: 0; }
 .nav-cta-pill {
   flex-shrink: 0;
-  background: #E8471A;
+  background: #ee78a3;
   color: #fff;
   border: none;
   border-radius: 12px;
@@ -1015,7 +1015,7 @@ img { max-width: 100%; display: block; }
 .brand-placeholder { display: none; }
 .featured-case-section {
   padding: 100px 0;
-  background: #E8471A;
+  background: #ee78a3;
   border: none;
 }
 .featured-case-inner {
@@ -1084,7 +1084,7 @@ img { max-width: 100%; display: block; }
 .featured-case-cta {
   align-self: start;
   background: #FFFFFF;
-  color: #E8471A;
+  color: #ee78a3;
   border: none;
   padding: 14px 28px;
   border-radius: 100px;
@@ -1202,7 +1202,7 @@ img { max-width: 100%; display: block; }
   margin-top: 8px;
   padding: 14px 28px;
   background: #fff;
-  color: #E8471A;
+  color: #ee78a3;
   border-radius: 100px;
   font-size: 14px;
   font-weight: 600;
