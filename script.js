@@ -324,7 +324,7 @@ if (contactForm) {
       `Name: ${name}\nBrand: ${brand}\nEmail: ${email}\nRevenue: ${revenue}\n\n${message}`
     );
     const subject = encodeURIComponent(`TikTok Shop Audit Request — ${brand}`);
-    window.location.href = `mailto:morgan@tockitagency.co.uk?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:contact-form-disabled?subject=${subject}&body=${body}`;
     contactForm.reset();
     contactForm.style.display = 'none';
     if (formSuccess) formSuccess.style.display = 'block';
