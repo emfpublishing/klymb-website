@@ -2037,20 +2037,7 @@ img { max-width: 100%; display: block; }
   min-height: 44px;
   line-height: 1.4;
 }
-.faq-q::after {
-  content: '+';
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 22px;
-  font-weight: 300;
-  color: var(--text-3);
-  transition: transform 0.25s ease, color 0.2s;
-  line-height: 1;
-}
 .faq-q[aria-expanded="true"] { color: var(--accent); }
-.faq-q[aria-expanded="true"]::after { transform: translateY(-50%) rotate(45deg); color: var(--accent); }
 .faq-q:hover { color: var(--accent); }
 .faq-a {
   max-height: 0;
