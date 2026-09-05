@@ -216,7 +216,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background: #f7f7f7;
+  background: #ffffff;
   border-radius: 0;
   box-shadow: none;
   transition: box-shadow var(--transition);
