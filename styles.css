@@ -1621,8 +1621,10 @@ img { max-width: 100%; display: block; }
   .featured-case-section { padding: 72px 0; }
   .featured-case-inner { grid-template-columns: 1fr; gap: 48px; }
   .featured-case-stats { gap: 24px; }
+  .featured-case-media { display: none; }
   .featured-case-grid { grid-template-columns: 1fr 1fr; }
   .cases-grid { grid-template-columns: 1fr; gap: 16px; }
+  .selected-work-grid { grid-template-columns: 1fr; }
   .case-card--large { grid-row: span 1; }
   .case-card { padding: 28px; }
   .ads-stats-grid { grid-template-columns: 1fr 1fr; }
