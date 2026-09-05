@@ -1589,8 +1589,11 @@ img { max-width: 100%; display: block; }
   .nav-links, .nav-cta, .nav-cta-pill { display: none; }
   .nav-hamburger { display: flex; }
   .nav {
-    height: auto;
-    min-height: 70px;
+    left: 12px;
+    right: 12px;
+    height: 60px;
+    min-height: 60px;
+    border-radius: 12px;
   }
 
   .section { padding: 72px 0; }
