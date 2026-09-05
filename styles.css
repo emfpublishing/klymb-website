@@ -218,11 +218,11 @@ img { max-width: 100%; display: block; }
   justify-content: center;
   background: #1A1714;
   border-radius: 0;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  box-shadow: none;
   transition: box-shadow var(--transition);
 }
 .nav.scrolled {
-  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  box-shadow: none;
 }
 .nav-inner {
   display: flex;
