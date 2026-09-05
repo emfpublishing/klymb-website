@@ -1608,7 +1608,7 @@ img { max-width: 100%; display: block; }
     padding: 24px 20px;
     width: 100%;
   }
-  .stat-divider { width: 60%; height: 1px; }
+  .stat-divider { display: none; }
   .stat { padding: 0; }
   .hero-actions { flex-direction: column; align-items: stretch; width: 100%; max-width: 320px; margin-bottom: 48px; }
   .hero-actions .btn { width: 100%; justify-content: center; }
