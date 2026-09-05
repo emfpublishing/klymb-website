@@ -208,17 +208,16 @@ img { max-width: 100%; display: block; }
 .nav {
   position: fixed;
   top: calc(var(--banner-h) + 16px);
-  left: 20px;
-  right: 20px;
+  left: 0;
+  right: 0;
   z-index: 1000;
   height: 70px;
-  max-width: 1400px;
-  margin: 0 auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: #f7f7f7;
-  border-radius: 16px;
+  border-radius: 0;
   box-shadow: 0 1px 0 rgba(0,0,0,0.06);
   transition: box-shadow var(--transition);
 }
