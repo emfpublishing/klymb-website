@@ -1006,10 +1006,14 @@ img { max-width: 100%; display: block; }
   max-width: 180px;
   object-fit: contain;
   opacity: 0.55;
-  filter: grayscale(1);
+  filter: grayscale(100%);
   border-radius: 4px;
   flex-shrink: 0;
-  pointer-events: none;
+  transition: filter 0.4s ease, opacity 0.4s ease;
+}
+.brand-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
 }
 .brands-grid { display: none; }
 .brand-placeholder { display: none; }

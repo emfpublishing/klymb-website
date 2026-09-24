@@ -31,7 +31,6 @@
         <li><a href="${p('#work')}">Results</a></li>
         <li><a href="/creators.html">Creators</a></li>
         <li><a href="${p('#testimonials')}">Testimonials</a></li>
-        <li><a href="${p('#about')}">About</a></li>
       </ul>
       <a href="/contact.html" class="btn nav-cta-pill">Book a Free Audit</a>
       <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -44,7 +43,6 @@
       <a href="${p('#work')}">Results</a>
       <a href="/creators.html">Creators</a>
       <a href="${p('#testimonials')}">Testimonials</a>
-      <a href="${p('#about')}">About</a>
       <a href="/contact.html" class="btn btn-primary">Book a Free Audit</a>
     </div>
   </nav>`;
